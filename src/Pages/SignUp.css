@@ -1,0 +1,83 @@
+.signup_wrapper {
+  width: 800px;
+  border-radius: 10px;
+  padding: 25px 33px;
+  margin: 15px auto;
+  box-shadow: 3px 3px 15px rgba(186, 186, 186, 0.75), -3px -3px 15px rgba(186, 186, 186, 0.75);
+}
+
+.signup_title {
+  text-align: left;
+  color: #29C6A0;
+  font-weight: 600;
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+.form_component {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.label_style {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.form-label {
+  margin: 0 0 4px 2px;
+  font-weight: 600;
+}
+
+.form_style {
+  width: 355px;
+}
+
+.bio_box {
+  text-align: left;
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.bioform_style {
+  width: 100%;
+}
+
+.btntext_wrapper {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 25px;
+}
+
+.btn_signup {
+  background-color: #26bf99;
+  border: none;
+}
+
+.btn_signup:hover {
+  background-color: rgba(38, 191, 153, .85);
+}
+
+.btn_wrapper > .btn_signup:active {
+  background-color: #26bf99;
+}
+
+.to_signin_text {
+  margin-top: 6px;
+  margin-left: 15px;
+  color: rgba(0, 0, 0, .85);
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.signin_link {
+  text-decoration: none;
+  color: #29C6A0;
+  font-weight: 600;
+}
+
+.signin_link:hover {
+  color: rgba(41, 198, 160, .85);
+}

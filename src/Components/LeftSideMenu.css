@@ -1,0 +1,106 @@
+.left_side_menu {
+  border-radius: 7px;
+  border: 1px solid rgb(230, 230, 230);
+  padding: 10px 0 7px;
+}
+
+.nav-link {
+  color: #0a0a0a;
+}
+
+.nav .nav-link.active {
+  color: #29C6A0;
+}
+
+.nav .nav-link.inactive:hover {
+  color: rgba(10, 10, 10, .8);
+}
+
+.navlink_style {
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.navlink_title {
+  margin: 1px 8px 0;
+}
+
+.post_photo_wrap {
+  margin: 20px 16px 15px 13px;
+}
+
+.btn_post_photo {
+  width: 100%;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  background-color: #29C6A0;
+  text-decoration: none;
+  color: #fbfbfb;
+}
+
+.btn_post_photo:hover {
+  background-color: rgba(41, 198, 160, .85);
+  color: #fbfbfb;
+}
+
+.post_photo_wrap > .btn_post_photo:active {
+  background-color: #29c6a0;
+  color: #fbfbfb;
+}
+
+.post_title {
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 7px;
+}
+
+/* Style for Modal */
+.post_form_wrap {
+  padding: 10px 22px 17px;
+}
+
+.caption_title {
+  font-weight: 600;
+  padding-top: 12px;
+}
+
+.btn_post {
+  width: 65px;
+  height: 35px;
+  font-weight: 500;
+  background-color: #29C6A0;
+  color: #fbfbfb;
+  text-decoration: none;
+  margin-top: 15px;
+  padding: 5px;
+}
+
+.btn_post:hover {
+  background-color: rgba(41, 198, 160, .9);
+  color: #fbfbfb;
+
+}
+
+/* Style for Search Bar */
+.search_wrap {
+  margin-top: 40px;
+}
+
+.search_box {
+  border-radius: 20px;
+}
+
+.btn_search {
+  background-color: #29C6A0;
+  border-radius: 20px;
+  color: #fbfbfb;
+}
+
+@media screen and (max-width: 991px) {
+  .left_side_menu {
+    display: none;
+  }
+}

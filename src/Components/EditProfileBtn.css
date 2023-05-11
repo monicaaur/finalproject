@@ -1,0 +1,50 @@
+.button_wrap {
+  text-align: center;
+}
+
+.the_button {
+  width: 95%;
+  height: 35px;
+  border-radius: 50px;
+  background-color: #29C6A0;
+  color: #fbfbfb;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 15px;
+  padding: 0;
+}
+
+.the_button:hover {
+  background-color: rgba(41, 198, 160, .9);
+  color: #fbfbfb;
+}
+
+.button_wrap > .the_button:active {
+  background-color: #29C6A0;
+  color: #fbfbfb;
+}
+
+/* Modal */
+.edit_profile_wrap {
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+.myprofile_form_style {
+  width: 300px;
+}
+
+.btn_update {
+  background-color: #26bf99;
+  border: none;
+  margin-top: 25px;
+}
+
+.btn_update:hover {
+  background-color: rgba(38, 191, 153, .85);
+}
+
+.btn_wrapper > .btn_update:active {
+  background-color: #26bf99;
+}

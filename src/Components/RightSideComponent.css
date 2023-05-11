@@ -1,0 +1,75 @@
+.right_side_component {
+  width: 100%;
+  margin-top: 0px;
+  /* margin-left: 25px; */
+  border: 1px solid rgb(230, 230, 230);
+  border-radius: 7px;
+  padding: 12px 18px 21px;
+  box-sizing: border-box;
+}
+
+.logged_account {
+  font-size: 22px;
+  font-weight: 500;
+  color: #29C6A0;
+  margin-bottom: 10px;
+}
+
+.side_user_component {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.side_pp {
+  width: 55px;
+  height: 55px;
+  border-radius: 50px;
+  background-color: grey;
+}
+
+.side_pp > img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.side_username {
+  font-size: 17px;
+  font-weight: 700;
+  margin-left: 15px;
+  line-height: 50px;
+}
+
+.see_profile_wrap {
+  margin-top: 18px;
+}
+
+.btn_see_profile {
+  width: 100%;
+  height: 38px;
+  background-color: #fbfbfb;
+  border: 1px solid #29C6A0;
+  color: #29C6A0;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.btn_see_profile:hover {
+  background-color: #fbfbfb;
+  border: 1px solid #29C6A0;
+  color: rgba(41, 198, 160, .85);
+}
+
+.see_profile_wrap > .btn_see_profile:active {
+  background-color: #fbfbfb;
+  border: 1px solid #29C6A0;
+  color: #29C6A0;
+}
+
+@media screen and (max-width: 991px) {
+  .right_side_component {
+    display: none;
+  }
+}

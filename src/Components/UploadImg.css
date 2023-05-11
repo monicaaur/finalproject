@@ -1,0 +1,40 @@
+.pp_wrapper {
+  text-align: left;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.upload_wrapper {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.upload_style {
+  margin-right: 7px;
+}
+
+.preview {
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  margin-top: 17px;
+}
+
+.btn_upload {
+  background-color: #fbfbfb;
+  border: 1px solid #29C6A0;
+  color: #29C6A0;
+  font-weight: 600;
+}
+
+.btn_upload:hover {
+  background-color: #fbfbfb;
+  border: 1px solid #29C6A0;
+  color: rgba(41, 198, 160, .85);
+}
+
+.upload_wrapper > .btn_upload:active {
+  background-color: #fbfbfb;
+  border: 1px solid #29C6A0;
+  color: #29C6A0;
+}

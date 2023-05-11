@@ -1,0 +1,82 @@
+.signin_page {
+  width: 450px;
+  margin-top: 80px;
+}
+
+.greet_title {
+  font-weight: 600;
+  font-size: 30px;
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.kumo_title {
+  color: #29C6A0;
+  font-weight: 600;
+}
+
+.signin_box {
+  border-radius: 10px;
+  padding: 33px 33px;
+  box-shadow: 3px 3px 15px rgba(186, 186, 186, 0.75), -3px -3px 15px rgba(186, 186, 186, 0.75);
+}
+
+.signin_title {
+  font-weight: 600;
+  font-size: 28px;
+  text-align: left;
+  margin-bottom: 26px;
+  color: #29C6A0;
+}
+
+.label_style {
+  font-weight: 500;
+  font-size: 16px;
+  text-align: left;
+}
+
+.form-label {
+  margin: 0 0 4px 2px;
+  font-weight: 600;
+}
+
+.signin_form_style {
+  width: 100%;
+}
+
+.btntext_wrapper {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 27px;
+}
+
+.btn_signin {
+  background-color: #26bf99;
+  border: none;
+}
+
+.btn_signin:hover {
+  background-color: rgba(38, 191, 153, .85);
+}
+
+.btn_wrapper > .btn_signin:active {
+  background-color: #26bf99;
+}
+
+.to_signup_text {
+  margin-top: 6px;
+  margin-left: 15px;
+  color: rgba(0, 0, 0, .85);
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.signup_link {
+  text-decoration: none;
+  color: #29C6A0;
+  font-weight: 600;
+}
+
+.signup_link:hover {
+  color: rgba(41, 198, 160, .85);
+}
