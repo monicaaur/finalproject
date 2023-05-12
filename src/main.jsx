@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import './index.css'
 import SignIn from './Pages/SignIn';
 import SignUp from './Pages/SignUp';
@@ -8,7 +8,8 @@ import Home from './Home.jsx';
 import Explore from './Explore.jsx';
 import MyProfile from './Pages/MyProfile';
 import UserProfile from './Pages/UserProfile';
-import PostModal from './Components/PostModal';
+import App from './App';
+import UpdatePost from './Components/UpdatePost';
 
 const router = createBrowserRouter([
   {
@@ -40,8 +41,12 @@ const router = createBrowserRouter([
     element: <UserProfile />
   },
   {
-    path: "/profile/post/:postID",
-    element: <PostModal />
+    path: "/app",
+    element: <App />
+  },
+  {
+    path: "/updatepost/:postID",
+    element: <UpdatePost />
   }
 ]);
 

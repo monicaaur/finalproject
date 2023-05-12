@@ -3,6 +3,7 @@ import { Button, Modal } from 'react-bootstrap';
 import Axios from 'axios';
 import { useParams } from "react-router-dom";
 import '../../Pages/Profile.css';
+// import FollowUnfollow from "../FollowUnfollow";
 
 const UserFollowing = ({totalFollowing}) => {
   const { userID } = useParams();
@@ -54,9 +55,10 @@ const UserFollowing = ({totalFollowing}) => {
                       {following.username}
                     </a>
                   </div>
-                  <div className="follow_button_wrap">
+                  {/* <div className="follow_button_wrap">
                     <Button type="submit" variant="link" className='follow_button'>Follow</Button>
-                  </div>
+                  </div> */}
+                  {/* <FollowUnfollow /> */}
                 </div>
               ))}
             </>

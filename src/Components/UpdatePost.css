@@ -1,0 +1,30 @@
+.update_post_wrapper {
+  width: 600px;
+  margin: 100px auto;
+  padding: 30px 25px 35px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 15px rgba(186, 186, 186, 0.75), -3px -3px 15px rgba(186, 186, 186, 0.75);
+}
+
+.update_post_text {
+  margin-bottom: 20px;
+}
+
+.btn_update_post {
+  width: 125px;
+  color: white;
+  background-color: #29C6A0;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+.btn_update_post:hover {
+  color: white;
+  background-color: rgba(41, 198, 160, .9);
+}
+
+.input_caption > .btn_update_post:active {
+  color: white;
+  background-color: #29C6A0;
+}

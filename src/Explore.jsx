@@ -9,7 +9,7 @@ import TimelinePost from './Components/TimelinePost';
 import RightSideComponent from './Components/RightSideComponent';
 
 const Explore = () => {
-  const exploreApi = `${import.meta.env.VITE_BASEURL}/api/v1/explore-post?size=10&page=1`
+  const exploreApi = `${import.meta.env.VITE_BASEURL}/api/v1/explore-post?size=10&page=1`;
 
   return(
     <>

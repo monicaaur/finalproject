@@ -35,6 +35,11 @@
   width: 300px;
 }
 
+.website_box {
+  margin-bottom: 15px;
+  margin-top: 0;
+}
+
 .btn_update {
   background-color: #26bf99;
   border: none;

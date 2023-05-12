@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import { Button, Modal, Form } from 'react-bootstrap';
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
 import Axios from 'axios';
 import '../index.css';
 import './EditProfileBtn.css';
-import UploadImg from "../Components/UploadImg";
+import './UploadImg.css';
 
 const EditProfileBtn = () => {
   const [show, setShow] = useState(false);
@@ -15,62 +13,65 @@ const EditProfileBtn = () => {
 
   const [uploadImage, setUploadImage] = useState("");
 
-  const updateProfile = useFormik({
-    initialValues: {
-      name: '',
-      username: '',
-      email: '',
-      phoneNumber: '',
-      bio: '',
-      profilePictureUrl: null
-    },
+  const [image, setImage] = useState("")
+  const [imagePreview, setImagePreview] = useState(null)
 
-    validationSchema: Yup.object({
-      name: Yup.string()
-        .min(3, 'Must be 3 characters or more')
-        .max(50, 'Must be less than 50 characters'),
-      username: Yup.string(),
-      email: Yup.string().email('Invalid email address'),
-      phoneNumber: Yup.string()
-        .matches(/^[0-9]{10,12}$/, "Must be in number"),
-      bio: Yup.string()
-        .max(250, 'Max 250 characters'),
-      profilePictureUrl: Yup.mixed()
-      .test(
-        "fileSize",
-        "File size should not be more than 1MB",
-        (value) => value && value.size <= 1000000
-      )
-    }),
+  const [name, setName] = useState("");
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [bio, setBio] = useState("");
+  const [website, setWebsite] = useState("");
 
-    onSubmit: async (values) => {
-      await Axios({
-        method: 'post',
-        url: `${import.meta.env.VITE_BASEURL}/api/v1/update-profile`,
+  const onImageUpload = (e) => {
+    console.log(e.target.files[0]);
+    setImage(e.target.files[0]);
+    setImagePreview(URL.createObjectURL(e.target.files[0]));
+  }
+
+  const updateProfile = async (e) => {
+    e.preventDefault();
+
+    const imgData = new FormData();
+    imgData.append("image", image);
+
+    await Axios.post(`${import.meta.env.VITE_BASEURL}/api/v1/upload-image`, imgData, {
+      headers: {
+        apiKey: `${import.meta.env.VITE_APIKEY}`,
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+        'Content-Type': 'multipart/form-data'
+      }
+    })
+    .then(async (response) => {
+      setUploadImage(response.data.url);
+
+      await Axios.post(`${import.meta.env.VITE_BASEURL}/api/v1/update-profile`, {
+        name: name,
+        username: username,
+        email: email,
+        phoneNumber: phoneNumber,
+        bio: bio,
+        website: website,
+        profilePictureUrl: response.data.url
+      }, {
         headers: {
           apiKey: `${import.meta.env.VITE_APIKEY}`,
           Authorization: `Bearer ${localStorage.getItem('token')}`,
-        },
-        data: {
-          name: values.name,
-          username:values.username,
-          email: values.email,
-          phoneNumber: values.phoneNumber,
-          bio: values.bio,
-          profilePictureUrl: uploadImage
-        },
+        }
       })
-
-      .then((response) => {
-        console.log(response);
+      .then(() => {
+        // setUploadImage('');
         alert('Update profile success')
+        window.location.reload();
       })
-      .catch((error) => {
+      .catch(error => {
         console.log(error);
-        alert('Update profile failed. Try again')
-      });
-    },
-  });
+      })
+    })
+    .catch(error => {
+      console.log(error);
+    })
+  }
 
   return(
     <>
@@ -84,7 +85,7 @@ const EditProfileBtn = () => {
         </Modal.Header>
         <Modal.Body className="edit_profile_wrap">
           <div>
-          <Form onSubmit={updateProfile.handleSubmit}>
+          <Form onSubmit={updateProfile}>
             <div className="form_component">
               <div className="mb-2 label_style">
                 <Form.Label htmlFor="name">Name</Form.Label>
@@ -92,14 +93,11 @@ const EditProfileBtn = () => {
                   id="name"
                   name="name"
                   type="text"
-                  onChange={updateProfile.handleChange}
-                  value={updateProfile.values.name}
+                  onChange={(e) => setName(e.target.value)}
+                  value={name}
                   className="myprofile_form_style"
                   placeholder="Enter name"
                 />
-                {updateProfile.touched.name && updateProfile.errors.name ? (
-                  <div style={{ color: '#e6283e', marginLeft: '2px'}}>{updateProfile.errors.name}</div>
-                ) : null}
               </div>
               <div className="mb-2 label_style">
                 <Form.Label htmlFor="username">Username</Form.Label>
@@ -107,14 +105,11 @@ const EditProfileBtn = () => {
                   id="username"
                   name="username"
                   type="text"
-                  onChange={updateProfile.handleChange}
-                  value={updateProfile.values.username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  value={username}
                   className="myprofile_form_style"
                   placeholder="Enter username"
                 />
-                {updateProfile.touched.username && updateProfile.errors.username ? (
-                  <div style={{ color: '#e6283e', marginLeft: '2px'}}>{updateProfile.errors.username}</div>
-                ) : null}
               </div>
             </div>
 
@@ -125,14 +120,11 @@ const EditProfileBtn = () => {
                   id="email"
                   name="email"
                   type="email"
-                  onChange={updateProfile.handleChange}
-                  value={updateProfile.values.email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  value={email}
                   className="myprofile_form_style"
                   placeholder="Enter email"
                 />
-                {updateProfile.touched.email && updateProfile.errors.email ? (
-                  <div style={{ color: '#e6283e', marginLeft: '2px'}}>{updateProfile.errors.email}</div>
-                ) : null}
               </div>
               <div className="mb-2 label_style">
                 <Form.Label htmlFor="phoneNumber">Phone Number</Form.Label>
@@ -140,14 +132,11 @@ const EditProfileBtn = () => {
                   id="phoneNumber"
                   name="phoneNumber"
                   type="text"
-                  onChange={updateProfile.handleChange}
-                  value={updateProfile.values.phoneNumber}
+                  onChange={(e) => setPhoneNumber(e.target.value)}
+                  value={phoneNumber}
                   className="myprofile_form_style"
                   placeholder="Enter phone number"
                 />
-                {updateProfile.touched.phoneNumber && updateProfile.errors.phoneNumber ? (
-                  <div style={{ color: '#e6283e', marginLeft: '2px'}}>{updateProfile.errors.phoneNumber}</div>
-                ) : null}
               </div>
             </div>
             
@@ -159,17 +148,39 @@ const EditProfileBtn = () => {
                 id="bio"
                 name="bio"
                 type="text"
-                onChange={updateProfile.handleChange}
-                value={updateProfile.values.bio}
-                className="bioform_style"
+                onChange={(e) => setBio(e.target.value)}
+                value={bio}
                 placeholder="Enter bio"
               />
-              {updateProfile.touched.bio && updateProfile.errors.bio ? (
-                <div style={{ color: '#e6283e', marginLeft: '2px'}}>{updateProfile.errors.bio}</div>
-              ) : null}
             </div>
 
-            <UploadImg onChange={(e) => setUploadImage(e)} title='Photo Profile'/>
+            <div className="website_box">
+              <Form.Label htmlFor="website">Website Url</Form.Label>
+              <Form.Control 
+                id="website"
+                name="website"
+                type="text"
+                onChange={(e) => setWebsite(e.target.value)}
+                value={website}
+                placeholder="Enter website url"
+              />
+            </div>
+
+            <div className="pp_wrapper">
+              <Form.Label htmlFor="profilePictureUrl">Upload Photo</Form.Label>
+
+              <div className="upload_wrapper">
+                <input
+                  className="form-control file-upload upload_style"
+                  type="file"
+                  onChange={onImageUpload}
+                  accept="image/*"
+                  />
+              </div>
+
+              {/* Image Upload Preview */}
+              {imagePreview && <img className="preview" src={imagePreview} alt="preview" />}
+            </div>
 
             <div className="btn_wrapper">
               <Button type="submit" variant="success" className='btn_update'>Update Profile</Button>

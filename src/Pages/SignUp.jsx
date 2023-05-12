@@ -16,6 +16,7 @@ const SignUp = () => {
       passwordRepeat: '',
       phoneNumber: '',
       bio: '',
+      website: ''
     },
 
     validationSchema: Yup.object({
@@ -35,6 +36,7 @@ const SignUp = () => {
         .required('*Required'),
       bio: Yup.string()
         .max(250, 'Max 250 characters'),
+      website: Yup.string()
     }),
 
     onSubmit: async (values) => {
@@ -52,6 +54,7 @@ const SignUp = () => {
           passwordRepeat: values.passwordRepeat,
           phoneNumber: values.phoneNumber,
           bio: values.bio,
+          website: values.website
         },
       })
 
@@ -186,6 +189,18 @@ const SignUp = () => {
           {formik.touched.bio && formik.errors.bio ? (
             <div style={{ color: '#e6283e', marginLeft: '2px'}}>{formik.errors.bio}</div>
           ) : null}
+        </div>
+
+        <div className="website_box">
+          <Form.Label htmlFor="website">Website Url</Form.Label>
+          <Form.Control 
+            id="website"
+            name="website"
+            type="text"
+            onChange={formik.handleChange}
+            value={formik.values.website}
+            placeholder="Enter website url"
+          />
         </div>
 
         {/* <UploadImg onChange={(e) => setUploadImage(e)} title='Photo Profile'/> */}

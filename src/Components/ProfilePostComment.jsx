@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import '../index.css';
-import './TimelinePost.css';
+import '../Pages/Profile.css';
 import Axios from 'axios';
 import { Button, Form } from 'react-bootstrap';
 
-const Comment = ({ postId, postComment }) => {
+const ProfilePostComment = ({ postId, postComment }) => {
   const [createComment, setCreateComment] = useState("");
-  const [comments, setComments] = useState([]);
 
   const [myId, setMyId] = useState("");
 
@@ -23,29 +22,7 @@ const Comment = ({ postId, postComment }) => {
     .catch(error => {
       console.log(error);
     })
-
-    const intervalId = setInterval(() => {
-      getComments();
-    }, 2000);
-
-    // cleanup function to clear interval when component unmounts
-    return () => clearInterval(intervalId);
   }, [])
-
-  const getComments = async () => {
-    await Axios.get(`${import.meta.env.VITE_BASEURL}/api/v1/post/${postId}`, {
-      headers: {
-        apiKey: `${import.meta.env.VITE_APIKEY}`,
-        Authorization: `Bearer ${localStorage.getItem('token')}`
-      }
-    })
-    .then(response => {
-      setComments(response.data.data.comments);
-    })
-    .catch(error => {
-      console.log(error);
-    });
-  };
 
   const handleUserProfile = async (id) => {
     if(id === myId) {
@@ -97,17 +74,17 @@ const Comment = ({ postId, postComment }) => {
   return(
     <>
       {postComment.length > 0 ? (
-        <div className="comment_box_wrap">
+        <div className="post_comment_box">
           {postComment.map(comments => (
             <>
             <div className="comment_box">
-              <div className="comment_wrap">
-                <div className="comment_pp_wrap">
-                  <img src={comments.user.profilePictureUrl} alt="profile picture" className="comment_pp" />
+              <div className="user_comment_wrap">
+                <div className="user_pp">
+                  <img src={comments.user.profilePictureUrl} alt="profile picture" />
                 </div>
-                <div className="comment_section">
-                  <a onClick={() => handleUserProfile(comments.user.id)} className="comment_username">{comments.user.username}</a>
-                  <p className="comment_text">{comments.comment}</p>
+                <div className="comment_box">
+                  <a onClick={() => handleUserProfile(comments.user.id)} className="user_username">{comments.user.username}</a>
+                  <p className="user_comment">{comments.comment}</p>
                 </div>
               </div>
               <Button 
@@ -128,8 +105,8 @@ const Comment = ({ postId, postComment }) => {
         </div>
       )}
 
-      <div className="input_comment_wrap">
-        <Form className="d-flex input_comment" 
+      <div className="post_input_comment">
+        <Form className="d-flex post_input" 
         onSubmit={handleComment}
         >
           <Form.Control
@@ -142,7 +119,7 @@ const Comment = ({ postId, postComment }) => {
             placeholder="Write comment.."
           />
         </Form>
-        <Button variant="link" type="submit" className="btn_send">
+        <Button variant="link" type="submit" className="send_comment">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#29C6A0" class="bi bi-send-fill" viewBox="0 0 16 16">
           <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z"/>
           </svg>
@@ -152,4 +129,4 @@ const Comment = ({ postId, postComment }) => {
   )
 }
 
-export default Comment
+export default ProfilePostComment

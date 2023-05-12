@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import '../index.css';
 import './LeftSideMenu.css';
 import { Nav, Modal, Button, Form, InputGroup } from 'react-bootstrap';
-import UploadImg from './UploadImg';
+import CreatePost from './CreatePost';
 
 const LeftSideMenu = () => {
   const location = useLocation();
@@ -47,25 +47,7 @@ const LeftSideMenu = () => {
           </Modal.Header>
           <Modal.Body className="post_form_wrap">
             <div>
-              <Form className="input_caption">
-                <UploadImg title='Upload Photo' />
-
-                <Form.Label htmlFor="caption" className='caption_title'>Caption</Form.Label>
-                <Form.Control
-                  as="textarea"
-                  rows={3}
-                  id="caption"
-                  name="caption"
-                  type="text"
-                  // onChange={formik.handleChange}
-                  // value={formik.values.email}
-                  placeholder="Write caption.."
-                />
-
-                <Button variant="link" type="submit" className="btn_post">
-                  Post
-                </Button>
-              </Form>
+              <CreatePost />
             </div>
           </Modal.Body>
         </Modal>

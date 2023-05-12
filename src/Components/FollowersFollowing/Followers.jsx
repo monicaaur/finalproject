@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Button, Modal } from 'react-bootstrap';
 import Axios from 'axios';
+import { useParams } from "react-router-dom";
 import '../../Pages/Profile.css';
 
 const Followers = ({totalFollowers}) => {
+  const { userID } = useParams();
+
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -44,13 +47,13 @@ const Followers = ({totalFollowers}) => {
                     <div className="followers_pp_wrap">
                       <img src={followers.profilePictureUrl} alt="" />
                     </div>
-                    <p className="followers_username">
+                    <a className="followers_username" href={`/profile/${followers.id}`}>
                       {followers.username}
-                    </p>
+                    </a>
                   </div>
-                  <div className="follow_button_wrap">
+                  {/* <div className="follow_button_wrap">
                     <Button type="submit" variant="link" className='follow_button'>Follow</Button>
-                  </div>
+                  </div> */}
                 </div>
               ))}
             </>

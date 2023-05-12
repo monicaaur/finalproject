@@ -55,9 +55,9 @@ const Followers = ({totalFollowers}) => {
                       {followers.username}
                     </a>
                   </div>
-                  <div className="follow_button_wrap">
+                  {/* <div className="follow_button_wrap">
                     <Button type="submit" variant="link" className='follow_button'>Follow</Button>
-                  </div>
+                  </div> */}
                 </div>
               ))}
             </>
