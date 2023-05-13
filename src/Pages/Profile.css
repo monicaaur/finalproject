@@ -203,9 +203,7 @@
 .post_information {
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
-  padding-bottom: 9px;
-  padding-left: 17px;
+  padding: 10px 0 9px 17px;
   box-sizing: border-box;
   border-bottom: 1px solid rgb(230, 230, 230);
 }
