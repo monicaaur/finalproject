@@ -203,8 +203,9 @@
 .post_information {
   display: flex;
   justify-content: space-between;
-  margin: 10px 0 0 17px;
+  margin-top: 10px;
   padding-bottom: 9px;
+  padding-left: 17px;
   box-sizing: border-box;
   border-bottom: 1px solid rgb(230, 230, 230);
 }
@@ -225,14 +226,15 @@
   width: 100%;
   height: 100%;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .username_post {
+  width: 400px;
   color: #0a0a0a;
   font-weight: 700;
   font-size: 16px;
-  margin-top: 7px;
-  margin-left: 13px;
+  margin: 0 0 0 13px;
 }
 
 .post_caption {
@@ -262,13 +264,6 @@
 }
 
 /* Comment Section */
-.post_comment_box {
-  height: 400px;
-  overflow: scroll;
-  overflow-x: hidden;
-  margin: 10px;
-}
-
 .user_comment_wrap {
   display: flex;
   justify-content: flex-start;
@@ -286,6 +281,7 @@
 .user_pp > img {
   width: 100%;
   height: 100%;
+  border-radius: 50%;
   object-fit: cover;
 }
 
@@ -297,6 +293,16 @@
 .user_username {
   font-weight: 700;
   margin: 0px;
+  text-decoration: none;
+  color: #0a0a0a;
+}
+
+.user_username:hover {
+  color: rgba(10, 10, 10, .9);
+}
+
+.comment_box > .user_username:active {
+  color: rgba(10, 10, 10, .85);
 }
 
 .user_comment {
@@ -305,15 +311,27 @@
   color: #0a0a0a;
 }
 
-.user_comment:hover {
-  color: rgba(10, 10, 10, .85);
+.comment_box > .delcom_text:active {
+  color: red;
 }
 
-.comment_box > .user_comment:active {
-  color: rgba(10, 10, 10, .85);
+.emptycomment_text {
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  margin: 20px 10px 10px;
+  color: #8a8a8a;
+  height: 400px;
+}
+
+.like_comment_wrap {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: -2px;
 }
 
 .post_input_comment {
+  width: 80%;
   margin: 0 23px;
   box-sizing: border-box;
   position: relative;
@@ -323,4 +341,19 @@
   position: absolute;
   right: 5px;
   bottom: 4px;
+}
+
+
+/* heart icon */
+.profile_heart_icon {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  text-align: center;
+}
+
+.profile_like_total {
+  width: 60px;
+  font-size: 15px;
+  margin-bottom: 0px;
 }

@@ -4,13 +4,13 @@ import './TimelinePost.css';
 import Axios from 'axios';
 import { Button, Form } from 'react-bootstrap';
 
-const Comment = ({ postId, postComment }) => {
+const Comment = ({ postId }) => {
   const [createComment, setCreateComment] = useState("");
-  const [comments, setComments] = useState([]);
+  const [postComment, setPostComment] = useState("");
 
   const [myId, setMyId] = useState("");
 
-  useEffect(async () => {
+  const getMyId = async () => {
     await Axios.get(`${import.meta.env.VITE_BASEURL}/api/v1/user`, {
       headers: {
         apiKey: `${import.meta.env.VITE_APIKEY}`,
@@ -23,16 +23,9 @@ const Comment = ({ postId, postComment }) => {
     .catch(error => {
       console.log(error);
     })
+  }
 
-    const intervalId = setInterval(() => {
-      getComments();
-    }, 2000);
-
-    // cleanup function to clear interval when component unmounts
-    return () => clearInterval(intervalId);
-  }, [])
-
-  const getComments = async () => {
+  const getPostComment = async () => {
     await Axios.get(`${import.meta.env.VITE_BASEURL}/api/v1/post/${postId}`, {
       headers: {
         apiKey: `${import.meta.env.VITE_APIKEY}`,
@@ -40,12 +33,17 @@ const Comment = ({ postId, postComment }) => {
       }
     })
     .then(response => {
-      setComments(response.data.data.comments);
+      setPostComment(response.data.data.comments)
     })
     .catch(error => {
       console.log(error);
-    });
-  };
+    })
+  }
+
+  useEffect(() => {
+    getPostComment();
+    getMyId();
+  }, [])
 
   const handleUserProfile = async (id) => {
     if(id === myId) {
@@ -74,6 +72,7 @@ const Comment = ({ postId, postComment }) => {
     .catch(error => {
       console.log(error);
     })
+    getPostComment();
   }
 
   const handleDeleteComment = async (e, commentId) => {
@@ -92,12 +91,19 @@ const Comment = ({ postId, postComment }) => {
     .catch(error => {
       console.log(error);
     })
+    getPostComment();
   }
 
   return(
     <>
       {postComment.length > 0 ? (
-        <div className="comment_box_wrap">
+        <div 
+          style={{
+            overflow: `${postComment.length > 4 ? "scroll" : "visible"}`,
+            height: `${postComment.length > 4 ? "270px" : "100%"}`,
+            overflowX: "hidden"
+          }}
+        >
           {postComment.map(comments => (
             <>
             <div className="comment_box">

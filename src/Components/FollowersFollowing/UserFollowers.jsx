@@ -44,7 +44,13 @@ const Followers = ({totalFollowers}) => {
         </Modal.Header>
         <Modal.Body>
           {dataFollowers.length > 0 ? (
-            <>
+            <div
+              style={{
+                overflow: `${dataFollowers.length > 5 ? "scroll" : "visible"}`,
+                height: `${dataFollowers.length > 5 ? "290px" : "100%"}`,
+                overflowX: "hidden"
+              }}
+            >
               {dataFollowers && dataFollowers.map(followers => (
                 <div className="followers_list_wrap">
                   <div className="account_wrap">
@@ -60,7 +66,7 @@ const Followers = ({totalFollowers}) => {
                   </div> */}
                 </div>
               ))}
-            </>
+            </div>
           ) : (
             <div>
               <p className="no_text">No Followers.</p>

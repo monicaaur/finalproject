@@ -40,7 +40,13 @@ const Following = ({totalFollowing}) => {
         </Modal.Header>
         <Modal.Body>
           {dataFollowing.length > 0 ? (
-            <>
+            <div
+              style={{
+                overflow: `${dataFollowing.length > 5 ? "scroll" : "visible"}`,
+                height: `${dataFollowing.length > 5 ? "290px" : "100%"}`,
+                overflowX: "hidden"
+              }}
+            >
               {dataFollowing && dataFollowing.map(following => (
                 <div className="followers_list_wrap">
                   <div className="account_wrap">
@@ -56,7 +62,7 @@ const Following = ({totalFollowing}) => {
                   </div> */}
                 </div>
               ))}
-            </>
+            </div>
           ) : (
             <div>
               <p className="no_text">No Following.</p>

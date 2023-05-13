@@ -124,13 +124,6 @@
   padding: 20px 22px;
 }
 
-.comment_box_wrap {
-  height: 250px;
-  overflow: scroll;
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
-
 .comment_box {
   display: flex;
   justify-content: space-between;
@@ -194,8 +187,7 @@
 }
 
 .input_comment_wrap {
-  margin-top: -2px;
-  margin-bottom: 5px;
+  margin: 5px 0;
 }
 
 .input_comment {

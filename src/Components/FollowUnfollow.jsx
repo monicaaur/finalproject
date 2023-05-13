@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap';
 import Axios from 'axios';
 import './FollowUnfollow.css';
 
-const FollowUnfollow = () => {
+const FollowUnfollow = ({getUserData}) => {
   const { userID } = useParams();
 
   const [isFollow, setIsFollow] = useState(false);
@@ -40,6 +40,7 @@ const FollowUnfollow = () => {
     .catch(error => {
       console.log(error);
     });
+    getUserData;
   };
 
   const handleUnfollow = () => {
@@ -55,6 +56,7 @@ const FollowUnfollow = () => {
     .catch(error => {
       console.log(error);
     });
+    getUserData;
   };
 
   return(

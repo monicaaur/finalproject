@@ -81,7 +81,11 @@
 .btn_post:hover {
   background-color: rgba(41, 198, 160, .9);
   color: #fbfbfb;
+}
 
+.input_caption > .btn_post:hover {
+  background-color: #29C6A0;
+  color: #fbfbfb;
 }
 
 /* Style for Search Bar */

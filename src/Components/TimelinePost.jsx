@@ -13,6 +13,8 @@ const TimelinePost = (props) => {
 
   const [postData, setPostData] = useState([]);
 
+  const [myId, setMyId] = useState("");
+
   const getPostData = async () => {
     await Axios.get(`${props.apiUrl}`, {
       headers: {
@@ -49,9 +51,33 @@ const TimelinePost = (props) => {
     })
   }
 
-  useEffect(async () => {
-    await getPostData()
+  const getMyId = async () => {
+    await Axios.get(`${import.meta.env.VITE_BASEURL}/api/v1/user`, {
+      headers: {
+        apiKey: `${import.meta.env.VITE_APIKEY}`,
+        Authorization: `Bearer ${localStorage.getItem('token')}`
+      }
+    })
+    .then(response => {
+      setMyId(response.data.data.id)
+    })
+    .catch(error => {
+      console.log(error);
+    })
+  }
+
+  useEffect(() => {
+    getPostData();
+    getMyId();
   }, [])
+
+  const handleUserProfile = async (id) => {
+    if(id === myId) {
+      window.location.assign("/myprofile")
+    } else {
+      window.location.assign(`/profile/${id}`)
+    }
+  }
 
   const handleLike = async (id, isLike) => {
     if (!isLike) {
@@ -97,9 +123,9 @@ const TimelinePost = (props) => {
             <div className="post_wrapper">
               <div className="user_wrapper">
                 <div className="photo_profile">
-                  <img src={posts.user.profilePictureUrl} alt="" />
+                  <img src={posts.user?.profilePictureUrl} alt="" />
                 </div>
-                <a href={`/profile/${posts.user.id}`} className="username_text">{posts.user.username}</a>
+                <a onClick={() => handleUserProfile(posts.user?.id)}className="username_text">{posts.user?.username}</a>
               </div>
               <div className="post_image">
                 <img src={posts.imageUrl} alt="" />
@@ -124,7 +150,7 @@ const TimelinePost = (props) => {
                 </a>
               </div>
               <div className="post_caption_wrap">
-                <p className="post_username"><a href={`/profile/${posts.user.id}`} className="uname">{posts.user.username}</a>   <span className='caption'>{posts.caption}</span></p>
+                <p className="post_username"><a onClick={() => handleUserProfile(posts.user?.id)} className="uname">{posts.user?.username}</a>   <span className='caption'>{posts.caption}</span></p>
                 <p className="create_date">Created at: {posts.createdAt}</p>
               </div>
             </div>
@@ -134,7 +160,7 @@ const TimelinePost = (props) => {
                 <Modal.Title>All Comments</Modal.Title>
               </Modal.Header>
               <Modal.Body className='comment_modal_body'>
-                <Comment postId={posts.id} postComment={posts.comment} commentId={posts.comment.id}/>
+                <Comment postId={posts.id} postComment={posts.comment}/>
               </Modal.Body>
             </Modal>
           </>

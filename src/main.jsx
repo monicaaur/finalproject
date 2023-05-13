@@ -8,7 +8,7 @@ import Home from './Home.jsx';
 import Explore from './Explore.jsx';
 import MyProfile from './Pages/MyProfile';
 import UserProfile from './Pages/UserProfile';
-import App from './App';
+// import App from './App';
 import UpdatePost from './Components/UpdatePost';
 
 const router = createBrowserRouter([
@@ -39,10 +39,6 @@ const router = createBrowserRouter([
   {
     path: "/profile/:userID",
     element: <UserProfile />
-  },
-  {
-    path: "/app",
-    element: <App />
   },
   {
     path: "/updatepost/:postID",
