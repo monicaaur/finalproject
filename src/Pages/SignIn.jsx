@@ -21,9 +21,9 @@ function SignIn() {
     onSubmit: values => {
       Axios({
         method: 'post',
-        url: `https://photo-sharing-api-bootcamp.do.dibimbing.id/api/v1/login`,
+        url: `${import.meta.env.VITE_BASEURL}/api/v1/login`,
         headers: {
-          apiKey: `c7b411cc-0e7c-4ad1-aa3f-822b00e7734b`
+          apiKey: `${import.meta.env.VITE_APIKEY}`
         },
         data: {
           email: values.email,
