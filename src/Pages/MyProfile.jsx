@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import Navibar from "../Navibar";
-import { Container, Row, Col, Modal, Dropdown, Form, Button } from 'react-bootstrap';
+import { Container, Row, Col, Modal, Dropdown } from 'react-bootstrap';
 import Axios from 'axios';
 import './Profile.css';
 
 // Import file Components
+import Navibar from "../Navibar";
 import LeftSideMenu from "../Components/LeftSideMenu";
 import EditProfileBtn from "../Components/EditProfileBtn";
 import Followers from "../Components/FollowersFollowing/Followers";
@@ -178,42 +178,6 @@ const MyProfile = () => {
                           </svg>}
                         <p className='profile_like_total'>{image.totalLikes} likes</p>
                       </div>
-
-                      {/* <div className="like_comment_wrap">
-                        <div className="profile_heart_icon"
-                          onClick={() => handleLike(image.id, image.isLike)}
-                        >
-                          {image.isLike ? 
-                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#29C6A0" class="bi bi-heart-fill" viewBox="0 0 16 16">
-                              <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-                            </svg>
-                          :                   
-                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="black" className="bi bi-heart" viewBox="0 0 16 16">
-                              <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
-                            </svg>}
-                          <p className='profile_like_total'>{image.totalLikes} likes</p>
-                        </div>
-                        <div className="post_input_comment">
-                          <Form className="d-flex post_input" 
-                          onSubmit={handleComment}
-                          >
-                            <Form.Control
-                              id="comment"
-                              name="comment"
-                              type="text"
-                              value={createComment}
-                              onChange={(e) => setCreateComment(e.target.value)}
-                              className="comment_form"
-                              placeholder="Write comment.."
-                            />
-                          </Form>
-                          <Button variant="link" type="submit" className="send_comment">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#29C6A0" class="bi bi-send-fill" viewBox="0 0 16 16">
-                            <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z"/>
-                            </svg>
-                          </Button>
-                        </div>
-                      </div> */}
                     </div>
                   </Modal.Body>
                 </Modal>

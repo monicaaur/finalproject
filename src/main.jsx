@@ -8,7 +8,6 @@ import Home from './Home.jsx';
 import Explore from './Explore.jsx';
 import MyProfile from './Pages/MyProfile';
 import UserProfile from './Pages/UserProfile';
-// import App from './App';
 import UpdatePost from './Components/UpdatePost';
 
 const router = createBrowserRouter([

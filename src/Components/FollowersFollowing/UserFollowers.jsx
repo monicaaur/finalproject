@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Modal } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
 import Axios from 'axios';
 import { useParams } from "react-router-dom";
 import '../../Pages/Profile.css';
@@ -61,9 +61,6 @@ const Followers = ({totalFollowers}) => {
                       {followers.username}
                     </a>
                   </div>
-                  {/* <div className="follow_button_wrap">
-                    <Button type="submit" variant="link" className='follow_button'>Follow</Button>
-                  </div> */}
                 </div>
               ))}
             </div>

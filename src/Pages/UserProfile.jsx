@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import Navibar from "../Navibar";
 import { useParams } from "react-router-dom";
 import { Container, Row, Col, Modal, Form, Button } from 'react-bootstrap';
 import Axios from 'axios';
 import './Profile.css'
 
 // Import file Components
+import Navibar from "../Navibar";
 import LeftSideMenu from "../Components/LeftSideMenu";
 import UserFollowers from "../Components/FollowersFollowing/UserFollowers";
 import UserFollowing from "../Components/FollowersFollowing/UserFollowing";
