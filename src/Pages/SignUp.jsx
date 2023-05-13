@@ -42,9 +42,9 @@ const SignUp = () => {
     onSubmit: async (values) => {
       await Axios({
         method: 'post',
-        url: `${import.meta.env.VITE_BASEURL}/api/v1/register`,
+        url: `https://photo-sharing-api-bootcamp.do.dibimbing.id/api/v1/register`,
         headers: {
-          apiKey: `${import.meta.env.VITE_APIKEY}`
+          apiKey: `c7b411cc-0e7c-4ad1-aa3f-822b00e7734b`
         },
         data: {
           name: values.name,
@@ -202,8 +202,6 @@ const SignUp = () => {
             placeholder="Enter website url"
           />
         </div>
-
-        {/* <UploadImg onChange={(e) => setUploadImage(e)} title='Photo Profile'/> */}
 
         <div className="btntext_wrapper">
           <div className="btn_wrapper">
