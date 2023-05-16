@@ -1,57 +1,60 @@
 import React, { useEffect, useState } from "react";
 import { Modal } from 'react-bootstrap';
 import Axios from 'axios';
-import '../../Pages/Profile.css';
+import './FollowersFollowing.css';
 
-const Followers = ({totalFollowers}) => {
+const MyFollowing = ({totalFollowing}) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const [dataFollowers, setDataFollowers] = useState([]);
+  const [dataFollowing, setDataFollowing] = useState([]);
 
-  const handleFollowers = async () => {
-    await Axios.get(`${import.meta.env.VITE_BASEURL}/api/v1/my-followers?size=10&page=1`, {
+  const handleFollowing = async () => {
+    await Axios.get(`${import.meta.env.VITE_BASEURL}/api/v1/my-following?size=10&page=1`, {
       headers: {
         apiKey: `${import.meta.env.VITE_APIKEY}`,
         Authorization: `Bearer ${localStorage.getItem('token')}`
       }
     })
     .then(response => {
-      setDataFollowers(response.data.data.users)
+      setDataFollowing(response.data.data.users)
     })
+    .catch((error) => {
+      alert(`${error.data.message}`);
+    });
   }
   
   useEffect(async () => {
-    await handleFollowers();
+    await handleFollowing();
   }, [])
 
   return(
     <>
-      <p className="numberof_info" onClick={() => handleShow()}>{totalFollowers} followers</p>
+      <p className="numberof_info" onClick={() => handleShow()}>{totalFollowing} following</p>
 
       <Modal show={show} onHide={handleClose} aria-labelledby="contained-modal-title-vcenter" centered>
         <Modal.Header closeButton className='header_style'>
-          <Modal.Title>Followers</Modal.Title>
+          <Modal.Title>Following</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {dataFollowers.length > 0 ? (
+          {dataFollowing.length > 0 ? (
             <div
               style={{
-                overflow: `${dataFollowers.length > 5 ? "scroll" : "visible"}`,
-                height: `${dataFollowers.length > 5 ? "290px" : "100%"}`,
+                overflow: `${dataFollowing.length > 5 ? "scroll" : "visible"}`,
+                height: `${dataFollowing.length > 5 ? "290px" : "100%"}`,
                 overflowX: "hidden"
               }}
             >
-              {dataFollowers && dataFollowers.map(followers => (
+              {dataFollowing && dataFollowing.map(following => (
                 <div className="followers_list_wrap">
                   <div className="account_wrap">
                     <div className="followers_pp_wrap">
-                      <img src={followers.profilePictureUrl} alt="" />
+                      <img src={following.profilePictureUrl} alt="" />
                     </div>
-                    <a className="followers_username" href={`/profile/${followers.id}`}>
-                      {followers.username}
+                    <a className="followers_username" href={`/profile/${following.id}`}>
+                      {following.username}
                     </a>
                   </div>
                 </div>
@@ -59,7 +62,7 @@ const Followers = ({totalFollowers}) => {
             </div>
           ) : (
             <div>
-              <p className="no_text">No Followers.</p>
+              <p className="no_text">No Following.</p>
             </div>
           )}
         </Modal.Body>
@@ -68,4 +71,4 @@ const Followers = ({totalFollowers}) => {
   )
 }
 
-export default Followers
+export default MyFollowing

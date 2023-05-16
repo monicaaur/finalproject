@@ -1,7 +1,5 @@
 import React from 'react';
-import '../index.css';
-import './UpdatePost.css';
-import './UploadImg.css';
+import '../../index.css';
 import Axios from 'axios';
 import { Dropdown } from 'react-bootstrap';
 
@@ -20,7 +18,6 @@ const DeletePost = ({ postId }) => {
       window.location.assign('/myprofile');
     })
     .catch(error => {
-      console.log("Error: ", error);
       alert(`${error.data.message}`);
     })
   }

@@ -21,7 +21,7 @@ const FollowUnfollow = ({getUserData}) => {
       setIsFollow(myFollowing.includes(userID));
     })
     .catch(error => {
-      console.log(error);
+      alert(`${error.data.message}`);
     });
   }, [userID]);
 
@@ -38,7 +38,7 @@ const FollowUnfollow = ({getUserData}) => {
       setIsFollow(true);
     })
     .catch(error => {
-      console.log(error);
+      alert(`${error.data.message}`);
     });
     getUserData;
   };
@@ -54,7 +54,7 @@ const FollowUnfollow = ({getUserData}) => {
       setIsFollow(false);
     })
     .catch(error => {
-      console.log(error);
+      alert(`${error.data.message}`);
     });
     getUserData;
   };

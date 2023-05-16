@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Button, Modal, Form } from 'react-bootstrap';
 import Axios from 'axios';
-import '../index.css';
+import '../../index.css';
 import './EditProfileBtn.css';
-import './UploadImg.css';
+import '../UploadImg.css';
 
 const EditProfileBtn = () => {
   const [show, setShow] = useState(false);
@@ -24,7 +24,6 @@ const EditProfileBtn = () => {
   const [website, setWebsite] = useState("");
 
   const onImageUpload = (e) => {
-    console.log(e.target.files[0]);
     setImage(e.target.files[0]);
     setImagePreview(URL.createObjectURL(e.target.files[0]));
   }
@@ -60,16 +59,15 @@ const EditProfileBtn = () => {
         }
       })
       .then(() => {
-        // setUploadImage('');
         alert('Update profile success')
         window.location.reload();
       })
       .catch(error => {
-        console.log(error);
+        alert(`${error.data.message}`);
       })
     })
     .catch(error => {
-      console.log(error);
+      alert(`${error.data.message}`);
     })
   }
 

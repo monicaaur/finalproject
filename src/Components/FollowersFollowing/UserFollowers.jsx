@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Modal } from 'react-bootstrap';
 import Axios from 'axios';
 import { useParams } from "react-router-dom";
-import '../../Pages/Profile.css';
+import './FollowersFollowing.css';
 
-const Followers = ({totalFollowers}) => {
+const UserFollowers = ({totalFollowers}) => {
   const { userID} = useParams()
 
   const [show, setShow] = useState(false);
@@ -22,12 +22,11 @@ const Followers = ({totalFollowers}) => {
       }
     })
     .then(response => {
-      console.log("response: ", response.data.data.users);
       setDataFollowers(response.data.data.users)
     })
-    .catch(error => {
-      console.log(error);
-    })
+    .catch((error) => {
+      alert(`${error.data.message}`);
+    });
   }
   
   useEffect(async () => {
@@ -75,4 +74,4 @@ const Followers = ({totalFollowers}) => {
   )
 }
 
-export default Followers
+export default UserFollowers

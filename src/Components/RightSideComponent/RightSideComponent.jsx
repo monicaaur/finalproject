@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
-import '../index.css';
+import '../../index.css';
 import './RightSideComponent.css';
 import { Button } from 'react-bootstrap';
 
@@ -19,7 +19,7 @@ const RightSideComponent = () => {
       setUserData(response.data.data);
     })
     .catch((error) => {
-      console.log(error);
+      alert(`${error.data.message}`);
     })
   }, []);
 

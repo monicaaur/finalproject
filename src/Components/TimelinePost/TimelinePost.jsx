@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import '../index.css';
+import '../../index.css';
 import './TimelinePost.css';
 import Axios from 'axios';
 import { Modal } from 'react-bootstrap';
-import Comment from './Comment';
+import TimelinePostComment from '../Comment/TimelinePostComment/TimelinePostComment';
 
 const TimelinePost = (props) => {
   const [show, setShow] = useState(false);
@@ -62,7 +62,7 @@ const TimelinePost = (props) => {
       setMyId(response.data.data.id)
     })
     .catch(error => {
-      console.log(error);
+      alert(`${error.data.message}`);
     })
   }
 
@@ -149,7 +149,7 @@ const TimelinePost = (props) => {
                   <p className='comments_total_text'>{posts.comment.length} comments</p>
                 </a>
               </div>
-              <div className="post_caption_wrap">
+              <div>
                 <p className="post_username"><a onClick={() => handleUserProfile(posts.user?.id)} className="uname">{posts.user?.username}</a>   <span className='caption'>{posts.caption}</span></p>
                 <p className="create_date">Created at: {posts.createdAt}</p>
               </div>
@@ -160,7 +160,7 @@ const TimelinePost = (props) => {
                 <Modal.Title>All Comments</Modal.Title>
               </Modal.Header>
               <Modal.Body className='comment_modal_body'>
-                <Comment postId={posts.id} postComment={posts.comment}/>
+                <TimelinePostComment postId={posts.id} postComment={posts.comment}/>
               </Modal.Body>
             </Modal>
           </>

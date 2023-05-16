@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Container, Nav, Navbar, } from 'react-bootstrap';
 import Axios from 'axios';
 import { useLocation } from 'react-router-dom';
-import './index.css'
+import '../../index.css'
 import './Navibar.css'
 
 function Navibar() {        
@@ -22,7 +22,7 @@ function Navibar() {
       setUsername(response.data.data.username);
     })
     .catch((error) => {
-      console.log(error);
+      alert(`${error.data.message}`);
     })
   }, []);
 
@@ -34,13 +34,11 @@ function Navibar() {
       },
     })
     .then((response) => {
-      console.log(response);
       localStorage.removeItem("token");
       alert('Sign out success')
       window.location.assign("/Signin")
     })
     .catch((error) => {
-      console.log(error);
       alert('Failed to Sign out')
     });
   }

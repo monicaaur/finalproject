@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import '../index.css';
-import '../Pages/Profile.css';
+import '../../../index.css';
+import './ProfilePostComment.css';
 import Axios from 'axios';
 import { Button, Form } from 'react-bootstrap';
 
@@ -21,7 +21,7 @@ const ProfilePostComment = ({ postId }) => {
       setMyId(response.data.data.id)
     })
     .catch(error => {
-      console.log(error);
+      alert(`${error.data.message}`);
     })
   }
 
@@ -36,7 +36,7 @@ const ProfilePostComment = ({ postId }) => {
       setPostComment(response.data.data.comments)
     })
     .catch(error => {
-      console.log(error);
+      alert(`${error.data.message}`);
     })
   }
 
@@ -66,11 +66,10 @@ const ProfilePostComment = ({ postId }) => {
       }
     })
     .then(async responses => {
-      console.log("comment", responses);
       setCreateComment('')
     })
     .catch(error => {
-      console.log(error);
+      alert(`${error.data.message}`);
     })
     getPostComment();
   }
@@ -85,11 +84,10 @@ const ProfilePostComment = ({ postId }) => {
       }
     })
     .then(response => {
-      console.log("delete", response);
       alert('delete comment success')
     })
     .catch(error => {
-      console.log(error);
+      alert(`${error.data.message}`);
     })
     getPostComment();
   }

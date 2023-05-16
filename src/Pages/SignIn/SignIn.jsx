@@ -3,7 +3,7 @@ import { Container, Button, Form } from 'react-bootstrap';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import Axios from 'axios';
-import '../index.css';
+import '../../index.css';
 import './SignIn.css';
 
 function SignIn() {
@@ -45,7 +45,6 @@ function SignIn() {
         window.location.assign("/home")
       })
       .catch((error) => {
-        console.log(error);
         alert(`${error.data.message}`)
       });
     },

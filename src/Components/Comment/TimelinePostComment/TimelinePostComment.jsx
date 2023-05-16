@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import '../index.css';
-import './TimelinePost.css';
+import '../../../index.css';
+import './TimelinePostComment.css';
 import Axios from 'axios';
 import { Button, Form } from 'react-bootstrap';
 
-const Comment = ({ postId }) => {
+const TimelinePostComment = ({ postId }) => {
   const [createComment, setCreateComment] = useState("");
   const [postComment, setPostComment] = useState("");
 
@@ -21,7 +21,7 @@ const Comment = ({ postId }) => {
       setMyId(response.data.data.id)
     })
     .catch(error => {
-      console.log(error);
+      alert(`${error.data.message}`);
     })
   }
 
@@ -36,7 +36,7 @@ const Comment = ({ postId }) => {
       setPostComment(response.data.data.comments)
     })
     .catch(error => {
-      console.log(error);
+      alert(`${error.data.message}`);
     })
   }
 
@@ -66,11 +66,10 @@ const Comment = ({ postId }) => {
       }
     })
     .then(async responses => {
-      console.log("comment", responses);
       setCreateComment('')
     })
     .catch(error => {
-      console.log(error);
+      alert(`${error.data.message}`);
     })
     getPostComment();
   }
@@ -85,11 +84,10 @@ const Comment = ({ postId }) => {
       }
     })
     .then(response => {
-      console.log("delete", response);
       alert('delete comment success')
     })
     .catch(error => {
-      console.log(error);
+      alert(`${error.data.message}`);
     })
     getPostComment();
   }
@@ -158,4 +156,4 @@ const Comment = ({ postId }) => {
   )
 }
 
-export default Comment
+export default TimelinePostComment

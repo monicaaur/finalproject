@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Container, Row, Col, Modal, Form, Button } from 'react-bootstrap';
+import { Container, Row, Col, Modal } from 'react-bootstrap';
 import Axios from 'axios';
 import './Profile.css'
 
 // Import file Components
-import Navibar from "../Navibar";
-import LeftSideMenu from "../Components/LeftSideMenu";
-import UserFollowers from "../Components/FollowersFollowing/UserFollowers";
-import UserFollowing from "../Components/FollowersFollowing/UserFollowing";
-import FollowUnfollow from "../Components/FollowUnfollow";
-import ProfilePostComment from "../Components/ProfilePostComment";
+import Navibar from "../../Components/Navibar/Navibar";
+import LeftSideMenu from "../../Components/LeftSideMenu/LeftSideMenu";
+import UserFollowers from "../../Components/FollowersFollowing/UserFollowers";
+import UserFollowing from "../../Components/FollowersFollowing/UserFollowing";
+import ProfilePostComment from "../../Components/Comment/ProfilePostComment/ProfilePostComment";
+import FollowUnfollow from "../../Components/FollowUnfollow/FollowUnfollow";
 
 const UserProfile = () => {
   const { userID } = useParams();
@@ -45,11 +45,11 @@ const UserProfile = () => {
         setPostImage(response.data.data.posts);
       })
       .catch((error) => {
-        console.log(error);
+        alert(`${error.data.message}`);
       })
     })
     .catch(error => {
-      console.log(error);
+      alert(`${error.data.message}`);
     })
   }
 
@@ -71,7 +71,7 @@ const UserProfile = () => {
         console.log(response);
       })
       .catch((error) => {
-        console.log(error);
+        alert(`${error.data.message}`);
       });
     } else {
       await Axios.post(`${import.meta.env.VITE_BASEURL}/api/v1/unlike`, {
@@ -86,7 +86,7 @@ const UserProfile = () => {
         console.log(response);
       })
       .catch((error) => {
-        console.log(error);
+        alert(`${error.data.message}`);
       });
     }
     getUserData();
@@ -106,7 +106,7 @@ const UserProfile = () => {
 
           <Col lg='7'>
             <div className="profile_info_wrap">
-              <div className="profile_info_left">
+              <div>
                 <div className="info_pp">
                   <img src={userData.profilePictureUrl} alt="Profile Picture" />
                 </div>

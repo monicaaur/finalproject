@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import '../index.css';
-import './LeftSideMenu.css';
-import './UploadImg.css';
+import '../../index.css';
+import './CreatePost.css';
+import '../UploadImg.css';
 import Axios from 'axios';
 import { Button, Form } from 'react-bootstrap';
 
@@ -12,7 +12,6 @@ const CreatePost = () => {
   const [caption, setCaption] = useState('');
 
   const onImageUpload = (e) => {
-    console.log(e.target.files[0]);
     setImage(e.target.files[0]);
     setImagePreview(URL.createObjectURL(e.target.files[0]));
   }
@@ -34,7 +33,6 @@ const CreatePost = () => {
       }
     })
     .then(async (response) => {
-      console.log("image", response);
       setUploadImage(response.data.url);
       
       await Axios.post(`${import.meta.env.VITE_BASEURL}/api/v1/create-post`, {
@@ -53,11 +51,10 @@ const CreatePost = () => {
         window.location.reload();
       })
       .catch(error => {
-        console.log(error);
+        alert(`${error.data.message}`);
       })
     })
     .catch(error => {
-      console.log("Error: ", error);
       alert(`${error.data.message}`);
     })
   }

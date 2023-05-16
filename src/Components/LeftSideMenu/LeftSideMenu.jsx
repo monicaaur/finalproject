@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import '../index.css';
+import '../../index.css';
 import './LeftSideMenu.css';
 import { Nav, Modal, Button } from 'react-bootstrap';
-import CreatePost from './CreatePost';
+import CreatePost from '../CreatePost/CreatePost';
 
 const LeftSideMenu = () => {
   const location = useLocation();

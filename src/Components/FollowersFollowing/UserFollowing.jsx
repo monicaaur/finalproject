@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Modal } from 'react-bootstrap';
 import Axios from 'axios';
 import { useParams } from "react-router-dom";
-import '../../Pages/Profile.css';
+import './FollowersFollowing.css';
 
 const UserFollowing = ({totalFollowing}) => {
   const { userID } = useParams();
@@ -24,9 +24,9 @@ const UserFollowing = ({totalFollowing}) => {
     .then(response => {
       setDataFollowing(response.data.data.users)
     })
-    .catch(error => {
-      console.log(error);
-    })
+    .catch((error) => {
+      alert(`${error.data.message}`);
+    });
   }
   
   useEffect(async () => {

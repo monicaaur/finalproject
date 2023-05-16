@@ -62,47 +62,6 @@
   padding: 10px 22px 17px;
 }
 
-.caption_title {
-  font-weight: 600;
-  padding-top: 12px;
-}
-
-.btn_post {
-  width: 65px;
-  height: 35px;
-  font-weight: 500;
-  background-color: #29C6A0;
-  color: #fbfbfb;
-  text-decoration: none;
-  margin-top: 15px;
-  padding: 5px;
-}
-
-.btn_post:hover {
-  background-color: rgba(41, 198, 160, .9);
-  color: #fbfbfb;
-}
-
-.input_caption > .btn_post:hover {
-  background-color: #29C6A0;
-  color: #fbfbfb;
-}
-
-/* Style for Search Bar */
-.search_wrap {
-  margin-top: 40px;
-}
-
-.search_box {
-  border-radius: 20px;
-}
-
-.btn_search {
-  background-color: #29C6A0;
-  border-radius: 20px;
-  color: #fbfbfb;
-}
-
 @media screen and (max-width: 991px) {
   .left_side_menu {
     display: none;

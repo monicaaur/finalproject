@@ -1,0 +1,25 @@
+.caption_title {
+  font-weight: 600;
+  padding-top: 12px;
+}
+
+.btn_post {
+  width: 65px;
+  height: 35px;
+  font-weight: 500;
+  background-color: #29C6A0;
+  color: #fbfbfb;
+  text-decoration: none;
+  margin-top: 15px;
+  padding: 5px;
+}
+
+.btn_post:hover {
+  background-color: rgba(41, 198, 160, .9);
+  color: #fbfbfb;
+}
+
+.input_caption > .btn_post:hover {
+  background-color: #29C6A0;
+  color: #fbfbfb;
+}

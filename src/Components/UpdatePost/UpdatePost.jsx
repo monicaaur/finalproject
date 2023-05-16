@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import '../index.css';
+import '../../index.css';
 import './UpdatePost.css';
-import './UploadImg.css';
+import '../UploadImg.css';
 import { useParams } from "react-router-dom";
 import Axios from 'axios';
 import { Button, Form } from 'react-bootstrap';
@@ -15,7 +15,6 @@ const UpdatePost = () => {
   const [caption, setCaption] = useState('');
 
   const onImageUpload = (e) => {
-    console.log(e.target.files[0]);
     setImage(e.target.files[0]);
     setImagePreview(URL.createObjectURL(e.target.files[0]));
   }
@@ -37,7 +36,6 @@ const UpdatePost = () => {
       }
     })
     .then(async (response) => {
-      console.log("image", response);
       setUploadImage(response.data.url);
       
       await Axios.post(`${import.meta.env.VITE_BASEURL}/api/v1/update-post/${postID}`, {
@@ -56,11 +54,10 @@ const UpdatePost = () => {
         window.location.assign('/myprofile');
       })
       .catch(error => {
-        console.log(error);
+        alert(`${error.data.message}`);
       })
     })
     .catch(error => {
-      console.log("Error: ", error);
       alert(`${error.data.message}`);
     })
   }

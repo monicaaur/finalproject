@@ -1,12 +1,12 @@
 import React from 'react';
-import './index.css';
+import '../index.css';
 import { Container, Row, Col } from 'react-bootstrap';
 
 // Import Component
-import Navibar from './Navibar';
-import LeftSideMenu from './Components/LeftSideMenu';
-import TimelinePost from './Components/TimelinePost';
-import RightSideComponent from './Components/RightSideComponent';
+import Navibar from '../Components/Navibar/Navibar';
+import LeftSideMenu from '../Components/LeftSideMenu/LeftSideMenu';
+import TimelinePost from '../Components/TimelinePost/TimelinePost';
+import RightSideComponent from '../Components/RightSideComponent/RightSideComponent';
 
 const Explore = () => {
   const exploreApi = `${import.meta.env.VITE_BASEURL}/api/v1/explore-post?size=10&page=1`;
