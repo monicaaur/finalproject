@@ -251,30 +251,41 @@
   }
 
   .profile_info_right {
-    margin-left: 35px;
+    margin-left: 27px;
   }
 
   .profile_username {
     margin-top: 0;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
+    font-size: 18px;
   }
 
-  .numberof_info {
-    font-size: 16px;
+  .three_info_wrap > .numberof_info {
+    font-size: 15px;
     margin-right: 10px;
     margin-bottom: 10px;
   }
 
   .bio_info {
     width: 250px;
-    font-size: 16px;
+    font-size: 15px;
+    word-wrap: break-word;
+  }
+
+  .website_info {
+    width: 250px;
+    display: inline-block;
+    font-size: 15px;
     word-wrap: break-word;
   }
 
   .photo_list_wrap {
     margin: 30px auto;
   }
+
   .photo_list {
     height: 120px;
+    margin-bottom: 4px;
+    margin-left: 4px;
   }
 }

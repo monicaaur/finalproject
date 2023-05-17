@@ -18,7 +18,7 @@ const DeletePost = ({ postId }) => {
       window.location.assign('/myprofile');
     })
     .catch(error => {
-      alert(error);
+      console.log(error);
     })
   }
 

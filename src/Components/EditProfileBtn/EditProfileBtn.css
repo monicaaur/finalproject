@@ -55,7 +55,7 @@
 }
 
 @media screen and (max-width: 425px) {
-  .edit_profile_button {
+  .button_wrap > .edit_profile_btn {
     height: 30px;
     font-size: 14px;
   }

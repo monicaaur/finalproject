@@ -91,6 +91,10 @@ li.nav_username_wrap {
     padding-left: 35px;
     padding-right: 23px;
   }
+
+  .nav_hidden > .navlink_style {
+    font-size: 16px;
+  }
 }
 
 @media screen and (max-width: 375px) {

@@ -21,7 +21,7 @@ const TimelinePostComment = ({ postId }) => {
       setMyId(response.data.data.id)
     })
     .catch(error => {
-      alert(error);
+      console.log(error);
     })
   }
 
@@ -36,7 +36,7 @@ const TimelinePostComment = ({ postId }) => {
       setPostComment(response.data.data.comments)
     })
     .catch(error => {
-      alert(error);
+      console.log(error);
     })
   }
 
@@ -69,7 +69,7 @@ const TimelinePostComment = ({ postId }) => {
       setCreateComment('')
     })
     .catch(error => {
-      alert(error);
+      console.log(error);
     })
     getPostComment();
   }
@@ -87,7 +87,7 @@ const TimelinePostComment = ({ postId }) => {
       alert('delete comment success')
     })
     .catch(error => {
-      alert(error);
+      console.log(error);
     })
     getPostComment();
   }

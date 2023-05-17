@@ -46,3 +46,15 @@
   color: rgba(41, 198, 160, .85);
   border: 2px solid #29C6A0;
 }
+
+@media screen and (max-width: 425px) {
+  .unfoll_btn {
+    height: 30px;
+    font-size: 15px;
+  }
+
+  .follow_btn {
+    height: 30px;
+    font-size: 15px;
+  }
+}

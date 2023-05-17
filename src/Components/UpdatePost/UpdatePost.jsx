@@ -54,11 +54,11 @@ const UpdatePost = () => {
         window.location.assign('/myprofile');
       })
       .catch(error => {
-        alert(error);
+        console.log(error);
       })
     })
     .catch(error => {
-      alert(error);
+      console.log(error);
     })
   }
 

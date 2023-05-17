@@ -45,11 +45,11 @@ const UserProfile = () => {
         setPostImage(response.data.data.posts);
       })
       .catch((error) => {
-        alert(error);
+        console.log(error);
       })
     })
     .catch(error => {
-      alert(error);
+      console.log(error);
     })
   }
 
@@ -71,7 +71,7 @@ const UserProfile = () => {
         console.log(response);
       })
       .catch((error) => {
-        alert(error);
+        console.log(error);
       });
     } else {
       await Axios.post(`${import.meta.env.VITE_BASEURL}/api/v1/unlike`, {
@@ -86,7 +86,7 @@ const UserProfile = () => {
         console.log(response);
       })
       .catch((error) => {
-        alert(error);
+        console.log(error);
       });
     }
     getUserData();

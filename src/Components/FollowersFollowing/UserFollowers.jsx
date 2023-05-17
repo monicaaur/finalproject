@@ -25,7 +25,7 @@ const UserFollowers = ({totalFollowers}) => {
       setDataFollowers(response.data.data.users)
     })
     .catch((error) => {
-      alert(error);
+      console.log(error);
     });
   }
   

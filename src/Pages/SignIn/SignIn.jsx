@@ -45,7 +45,7 @@ function SignIn() {
         window.location.assign("/home")
       })
       .catch((error) => {
-        alert(error)
+        console.log(error);
       });
     },
   });

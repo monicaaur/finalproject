@@ -63,11 +63,11 @@ const EditProfileBtn = () => {
         window.location.reload();
       })
       .catch(error => {
-        alert(error);
+        console.log(error);
       })
     })
     .catch(error => {
-      alert(error);
+      console.log(error);
     })
   }
 
