@@ -43,11 +43,11 @@ const MyProfile = () => {
         setPostImage(response.data.data.posts);
       })
       .catch((error) => {
-        alert(`${error.data.message}`);
+        alert(error);
       })
     })
     .catch((error) => {
-      alert(`${error.data.message}`);
+      alert(error);
     })
   }
   
@@ -69,7 +69,7 @@ const MyProfile = () => {
         console.log(response);
       })
       .catch((error) => {
-        alert(`${error.data.message}`);
+        alert(error);
       });
     } else {
       await Axios.post(`${import.meta.env.VITE_BASEURL}/api/v1/unlike`, {
@@ -84,7 +84,7 @@ const MyProfile = () => {
         console.log(response);
       })
       .catch((error) => {
-        alert(`${error.data.message}`);
+        alert(error);
       });
     }
     handleLoggedUser();

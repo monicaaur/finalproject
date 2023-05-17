@@ -62,7 +62,7 @@ const TimelinePost = (props) => {
       setMyId(response.data.data.id)
     })
     .catch(error => {
-      alert(`${error.data.message}`);
+      alert(error);
     })
   }
 
@@ -93,7 +93,7 @@ const TimelinePost = (props) => {
         console.log(response);
       })
       .catch((error) => {
-        console.log(error);
+        alert(error);
       });
     } else {
       await Axios.post(`${import.meta.env.VITE_BASEURL}/api/v1/unlike`, {
@@ -108,7 +108,7 @@ const TimelinePost = (props) => {
         console.log(response);
       })
       .catch((error) => {
-        console.log(error);
+        alert(error);
       });
     }
     getPostData();

@@ -122,3 +122,14 @@
 .comment_modal_body {
   padding: 20px 22px;
 }
+
+@media screen and (max-width: 425px) {
+  .post_wrapper {
+    width: 95%;
+    margin-bottom: 40px;
+  }
+
+  .modal-content {
+    width: 96.5%;
+  }
+}

@@ -59,12 +59,10 @@ const SignUp = () => {
       })
 
       .then((response) => {
-        console.log(response);
         alert('Registration success')
         window.location.assign("/Signin")
       })
       .catch((error) => {
-        console.log(error);
         alert('Registration failed. Try again')
       });
     },
@@ -204,7 +202,7 @@ const SignUp = () => {
         </div>
         
         <div className="btntext_wrapper">
-          <div className="btn_wrapper">
+          <div className="btnsignup_wrapper">
             <Button type="submit" variant="success" className='btn_signup'>Sign Up</Button>
           </div>
 

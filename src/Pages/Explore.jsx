@@ -1,5 +1,6 @@
 import React from 'react';
 import '../index.css';
+import './HomeExplore.css';
 import { Container, Row, Col } from 'react-bootstrap';
 
 // Import Component
@@ -14,7 +15,7 @@ const Explore = () => {
   return(
     <>
       <Navibar />
-      <Container fluid style={{ width: '88%', margin: '95px auto 0' }}>
+      <Container fluid className='homeexplore_wrapper'>
         <Row>
           <Col lg='3' md='3'>
             <LeftSideMenu />

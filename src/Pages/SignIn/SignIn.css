@@ -80,3 +80,28 @@
 .signup_link:hover {
   color: rgba(41, 198, 160, .85);
 }
+
+@media screen and (max-width: 425px) {
+  .signin_page {
+    width: 100%;
+  }
+
+  .signin_box {
+    width: 85%;
+    margin: 0 auto 90px;
+    padding: 30px 27px;
+  }
+
+  .btn_wrapper {
+    width: 80px;
+  }
+
+  .btntext_wrapper {
+    display: block;
+  }
+
+  .to_signup_text {
+    margin-top: 15px;
+    margin-left: 0;
+  }
+}

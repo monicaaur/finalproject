@@ -1,0 +1,10 @@
+.homeexplore_wrapper {
+  width: 88%;
+  margin: 95px auto 0;
+}
+
+@media screen and (max-width: 425px) {
+  .homeexplore_wrapper {
+    margin: 70px auto 0;
+  }
+}

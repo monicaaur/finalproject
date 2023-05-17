@@ -230,3 +230,51 @@
   font-size: 15px;
   margin-bottom: 0px;
 }
+
+@media screen and (max-width: 425px) {
+  .profile_wrap {
+    width: 87%;
+    margin: 65px auto 0;
+  }
+
+  .profile_info_wrap {
+    padding-bottom: 27px;
+  }
+
+  .info_pp {
+    width: 85px;
+    height: 85px;
+  }
+
+  .profile_info_left {
+    margin-left: 5px;
+  }
+
+  .profile_info_right {
+    margin-left: 35px;
+  }
+
+  .profile_username {
+    margin-top: 0;
+    margin-bottom: 12px;
+  }
+
+  .numberof_info {
+    font-size: 16px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+
+  .bio_info {
+    width: 250px;
+    font-size: 16px;
+    word-wrap: break-word;
+  }
+
+  .photo_list_wrap {
+    margin: 30px auto;
+  }
+  .photo_list {
+    height: 120px;
+  }
+}

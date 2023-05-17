@@ -22,7 +22,7 @@ function Navibar() {
       setUsername(response.data.data.username);
     })
     .catch((error) => {
-      alert(`${error.data.message}`);
+      alert(error);
     })
   }, []);
 

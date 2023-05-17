@@ -88,14 +88,14 @@ li.nav_username_wrap {
 
 @media screen and (max-width: 425px) {
   .fixed-top{
-    padding-left: 43px;
-    padding-right: 35px;
+    padding-left: 35px;
+    padding-right: 23px;
   }
 }
 
 @media screen and (max-width: 375px) {
   .fixed-top{
-    padding-left: 35px;
-    padding-right: 25px;
+    padding-left: 32px;
+    padding-right: 17px;
   }
 }

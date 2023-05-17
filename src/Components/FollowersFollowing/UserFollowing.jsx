@@ -25,7 +25,7 @@ const UserFollowing = ({totalFollowing}) => {
       setDataFollowing(response.data.data.users)
     })
     .catch((error) => {
-      alert(`${error.data.message}`);
+      alert(error);
     });
   }
   

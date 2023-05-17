@@ -51,11 +51,11 @@ const CreatePost = () => {
         window.location.reload();
       })
       .catch(error => {
-        alert(`${error.data.message}`);
+        alert(error);
       })
     })
     .catch(error => {
-      alert(`${error.data.message}`);
+      alert(error);
     })
   }
 

@@ -45,11 +45,11 @@ const UserProfile = () => {
         setPostImage(response.data.data.posts);
       })
       .catch((error) => {
-        alert(`${error.data.message}`);
+        alert(error);
       })
     })
     .catch(error => {
-      alert(`${error.data.message}`);
+      alert(error);
     })
   }
 
@@ -71,7 +71,7 @@ const UserProfile = () => {
         console.log(response);
       })
       .catch((error) => {
-        alert(`${error.data.message}`);
+        alert(error);
       });
     } else {
       await Axios.post(`${import.meta.env.VITE_BASEURL}/api/v1/unlike`, {
@@ -86,7 +86,7 @@ const UserProfile = () => {
         console.log(response);
       })
       .catch((error) => {
-        alert(`${error.data.message}`);
+        alert(error);
       });
     }
     getUserData();
@@ -106,7 +106,7 @@ const UserProfile = () => {
 
           <Col lg='7'>
             <div className="profile_info_wrap">
-              <div>
+              <div className="profile_info_left">
                 <div className="info_pp">
                   <img src={userData.profilePictureUrl} alt="Profile Picture" />
                 </div>

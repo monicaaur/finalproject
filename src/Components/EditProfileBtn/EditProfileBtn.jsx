@@ -63,18 +63,18 @@ const EditProfileBtn = () => {
         window.location.reload();
       })
       .catch(error => {
-        alert(`${error.data.message}`);
+        alert(error);
       })
     })
     .catch(error => {
-      alert(`${error.data.message}`);
+      alert(error);
     })
   }
 
   return(
     <>
       <div className="button_wrap">
-        <Button type="submit" variant="link" className='the_button' style={{ width: '100%' }} onClick={() => handleShow()}>Edit Profile</Button>
+        <Button type="submit" variant="link" className='edit_profile_btn the_button' style={{ width: '100%' }} onClick={() => handleShow()}>Edit Profile</Button>
       </div>
 
       <Modal show={show} onHide={handleClose} size='lg' aria-labelledby="contained-modal-title-vcenter" centered>

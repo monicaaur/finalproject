@@ -21,7 +21,7 @@ const ProfilePostComment = ({ postId }) => {
       setMyId(response.data.data.id)
     })
     .catch(error => {
-      alert(`${error.data.message}`);
+      alert(error);
     })
   }
 
@@ -36,7 +36,7 @@ const ProfilePostComment = ({ postId }) => {
       setPostComment(response.data.data.comments)
     })
     .catch(error => {
-      alert(`${error.data.message}`);
+      alert(error);
     })
   }
 
@@ -69,7 +69,7 @@ const ProfilePostComment = ({ postId }) => {
       setCreateComment('')
     })
     .catch(error => {
-      alert(`${error.data.message}`);
+      alert(error);
     })
     getPostComment();
   }
@@ -87,7 +87,7 @@ const ProfilePostComment = ({ postId }) => {
       alert('delete comment success')
     })
     .catch(error => {
-      alert(`${error.data.message}`);
+      alert(error);
     })
     getPostComment();
   }

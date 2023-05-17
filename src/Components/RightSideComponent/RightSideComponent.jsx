@@ -19,7 +19,7 @@ const RightSideComponent = () => {
       setUserData(response.data.data);
     })
     .catch((error) => {
-      alert(`${error.data.message}`);
+      alert(error);
     })
   }, []);
 

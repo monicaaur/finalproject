@@ -53,3 +53,10 @@
 .btn_wrapper > .btn_update:active {
   background-color: #26bf99;
 }
+
+@media screen and (max-width: 425px) {
+  .edit_profile_button {
+    height: 30px;
+    font-size: 14px;
+  }
+}
