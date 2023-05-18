@@ -63,7 +63,7 @@ const SignUp = () => {
         window.location.assign("/Signin")
       })
       .catch((error) => {
-        alert('Registration failed. Try again')
+        alert(`${error.response.data.message}`)
       });
     },
   });

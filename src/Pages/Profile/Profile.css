@@ -288,4 +288,20 @@
     margin-bottom: 4px;
     margin-left: 4px;
   }
+
+  .post_modal_body {
+    display: block;
+  }
+
+  .post_picture {
+    width: 100%;
+  }
+
+  .post_information_wrap {
+    width: 100%;
+  }
+
+  .post_information {
+    padding: 13px 0 9px 17px;
+  }
 }

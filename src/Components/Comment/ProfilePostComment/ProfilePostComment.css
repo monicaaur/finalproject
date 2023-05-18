@@ -92,3 +92,10 @@
   right: 5px;
   bottom: 4px;
 }
+
+@media screen and (max-width: 425px) {
+  .post_input_comment {
+    width: 77%;
+    margin: 0 15px 17px;
+  }
+}

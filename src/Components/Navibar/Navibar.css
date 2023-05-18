@@ -83,7 +83,16 @@ li.nav_username_wrap {
 
   .nav_username {
     margin-top: 20px;
-}
+    font-size: 16px;
+  }
+
+  li.nav_username_wrap {
+    font-size: 16px;
+  }
+
+  .nav_signout {
+    font-size: 16px;
+  }
 }
 
 @media screen and (max-width: 425px) {
