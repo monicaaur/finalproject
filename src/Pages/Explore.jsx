@@ -17,13 +17,13 @@ const Explore = () => {
       <Navibar />
       <Container fluid className='homeexplore_wrapper'>
         <Row>
-          <Col lg='3' md='3'>
+          <Col lg='3' md='3' className='leftside_wrapper'>
             <LeftSideMenu />
           </Col>
-          <Col lg='5' md='5' sm='12'>
+          <Col lg='5' md='5' sm='12' className='timelinepost_wrapper'>
             <TimelinePost apiUrl={exploreApi} text="Loading.."/>
           </Col>
-          <Col lg='4' md='4'>
+          <Col lg='4' md='4' className='rightside_wrapper'>
             <RightSideComponent />
           </Col>
         </Row>

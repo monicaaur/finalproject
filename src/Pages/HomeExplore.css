@@ -3,8 +3,33 @@
   margin: 95px auto 0;
 }
 
+@media screen and (max-width: 991px) {
+  .leftside_wrapper {
+    width: 100%;
+  }
+
+  .rightside_wrapper {
+    display: none;
+  }
+
+  .timelinepost_wrapper {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
 @media screen and (max-width: 425px) {
   .homeexplore_wrapper {
     margin: 70px auto 0;
+  }
+
+  .timelinepost_wrapper {
+    width: 98%;
+  }
+}
+
+@media screen and (min-width: 320px) {
+  .timelinepost_wrapper {
+    width: 100%;
   }
 }

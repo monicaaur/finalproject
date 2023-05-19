@@ -67,6 +67,10 @@
 }
 
 @media screen and (max-width: 991px) {
+  .post_for_mobile {
+    display: block;
+    margin-bottom: 40px;
+  }
   .left_side_menu {
     display: none;
   }

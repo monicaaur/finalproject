@@ -99,7 +99,7 @@
   }
 
   .btn_wrapper {
-    width: 80px;
+    width: 100%;
   }
 
   .btntext_wrapper {
@@ -109,5 +109,37 @@
   .to_signup_text {
     margin-top: 15px;
     margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .greet_title {
+    width: 360px;
+    font-size: 25px;
+  }
+
+  .signin_title {
+    font-size: 26px;
+    margin-bottom: 23px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .greet_title {
+    width: 290px;
+    font-size: 22px;
+    margin-bottom: 25px;
+  }
+
+  .signin_title {
+    font-size: 25px;
+  }
+
+  .to_signup_text {
+    font-size: 15px;
+  }
+
+  .signin_box {
+    padding: 30px 21px;
   }
 }

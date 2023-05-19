@@ -123,13 +123,72 @@
   padding: 20px 22px;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (min-width: 991px) {
+  .username_text {
+    font-size: 18px;
+  }
+
   .post_wrapper {
-    width: 95%;
+    width: 90%;
+  }
+
+  .likes_total_text {
+    font-size: 17px;
+  }
+
+  .comments_total_text {
+    font-size: 17px;
+  }
+
+  .post_username {
+    font-size: 18px;
+  }
+
+  .photo_profile {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media screen and (min-width: 425px) {
+  .post_wrapper {
+    width: 100%;
     margin-bottom: 40px;
   }
 
   .modal-content {
     width: 96.5%;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .modal-content {
+    width: 96.5%;
+  }
+  
+  .modal-backdrop.show {
+    width: 100%;
+    height: 100%;
+  }
+  
+}
+
+@media screen and (min-width: 375px) {
+  /* .post_wrapper {
+    width: 96%;
+  } */
+
+  .modal-content {
+    width: 92.5%;
+  }
+}
+
+@media screen and (min-width: 320px) {
+  .post_wrapper {
+    width: 96%;
+  }
+
+  .modal-content {
+    width: 92.5%;
   }
 }

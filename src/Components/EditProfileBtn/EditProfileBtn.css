@@ -54,6 +54,20 @@
   background-color: #26bf99;
 }
 
+@media screen and (max-width: 991px) {
+  .form_component {
+    display: block;
+  }
+
+  .myprofile_form_style {
+    width: 100%;
+  }
+
+  .edit_profile_wrap {
+    padding: 15px 20px 20px;
+  }
+}
+
 @media screen and (max-width: 425px) {
   .button_wrap > .edit_profile_btn {
     height: 30px;

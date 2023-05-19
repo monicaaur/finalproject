@@ -93,9 +93,30 @@
   bottom: 4px;
 }
 
+@media screen and (max-width: 991px) {
+  .post_input_comment {
+    width: 79%;
+    margin: 0 20px 19px;
+  }
+}
+
 @media screen and (max-width: 425px) {
   .post_input_comment {
     width: 77%;
     margin: 0 15px 17px;
   }
 }
+
+@media screen and (max-width: 375px) {
+  .post_input_comment {
+    width: 75%;
+    margin: 0 15px 17px;
+  }
+}
+/* 
+@media screen and (max-width: 320px) {
+  .post_input_comment {
+    width: 75%;
+    margin: 0 15px 17px;
+  }
+} */

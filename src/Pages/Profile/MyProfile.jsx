@@ -104,7 +104,7 @@ const MyProfile = () => {
 
           <Col lg='7'>
             <div className="profile_info_wrap">
-              <div>
+              <div className="profile_info_left">
                 <div className="info_pp">
                   <img src={userData.profilePictureUrl} alt="Profile Picture" />
                 </div>
