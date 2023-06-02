@@ -100,7 +100,7 @@ const ProfilePostComment = ({ postId }) => {
             overflow: `${postComment.length > 6 ? "scroll" : "visible"}`,
             overflowX: "hidden",
             height: "400px",
-            margin: "10px"
+            margin: `${postComment.length > 0 ? "10px 10px 18px" : "10px"}`
           }}
         >
           {postComment.map(comments => (

@@ -231,6 +231,12 @@
   margin-bottom: 0px;
 }
 
+@media screen and (max-width: 1920px) {
+  .photo_list {
+    height: 285px;
+  }
+}
+
 @media screen and (max-width: 991px) {
   .profile_info_left {
     margin-left: 13px;
