@@ -51,42 +51,25 @@ const MyProfile = () => {
     })
   }
   
-  useEffect(async () => {
-    await handleLoggedUser();
+  useEffect(() => {
+    handleLoggedUser();
   }, [])
 
   const handleLike = async (id, isLike) => {
-    if (!isLike) {
-      await Axios.post(`${import.meta.env.VITE_BASEURL}/api/v1/like`, {
-        postId: id
-      }, {
-        headers: {
-          apiKey: `${import.meta.env.VITE_APIKEY}`,
-          Authorization: `Bearer ${localStorage.getItem('token')}`
-        }
-      })
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-    } else {
-      await Axios.post(`${import.meta.env.VITE_BASEURL}/api/v1/unlike`, {
-        postId: id
-      }, {
-        headers: {
-          apiKey: `${import.meta.env.VITE_APIKEY}`,
-          Authorization: `Bearer ${localStorage.getItem('token')}`
-        }
-      })
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-    }
+    await Axios.post(`${import.meta.env.VITE_BASEURL}/api/v1/${isLike ? 'unlike' : 'like'}`, {
+      postId: id
+    }, {
+      headers: {
+        apiKey: `${import.meta.env.VITE_APIKEY}`,
+        Authorization: `Bearer ${localStorage.getItem('token')}`
+      }
+    })
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
     handleLoggedUser();
   };
 
