@@ -36,7 +36,7 @@ const MyFollowing = ({totalFollowing}) => {
 
       <Modal show={show} onHide={handleClose} aria-labelledby="contained-modal-title-vcenter" centered>
         <Modal.Header closeButton className='header_style'>
-          <Modal.Title>Following</Modal.Title>
+          <Modal.Title>My Following</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           {dataFollowing.length > 0 ? (

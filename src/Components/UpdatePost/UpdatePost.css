@@ -1,6 +1,12 @@
+.updatepost_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95vh;
+}
+
 .update_post_wrapper {
   width: 600px;
-  margin: 100px auto;
   padding: 30px 25px 35px;
   border-radius: 10px;
   box-shadow: 3px 3px 15px rgba(186, 186, 186, 0.75), -3px -3px 15px rgba(186, 186, 186, 0.75);

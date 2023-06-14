@@ -4,7 +4,7 @@ import Axios from 'axios';
 import { useParams } from "react-router-dom";
 import './FollowersFollowing.css';
 
-const UserFollowers = ({totalFollowers}) => {
+const UserFollowers = ({totalFollowers, username}) => {
   const { userID} = useParams()
 
   const [show, setShow] = useState(false);
@@ -39,7 +39,7 @@ const UserFollowers = ({totalFollowers}) => {
 
       <Modal show={show} onHide={handleClose} aria-labelledby="contained-modal-title-vcenter" centered>
         <Modal.Header closeButton className='header_style'>
-          <Modal.Title>Followers</Modal.Title>
+          <Modal.Title>{username}'s followers</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           {dataFollowers.length > 0 ? (

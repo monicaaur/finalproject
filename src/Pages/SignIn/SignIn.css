@@ -1,6 +1,13 @@
+.signin_pagewrap {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .signin_page {
   width: 450px;
-  margin-top: 80px;
+  /* margin-top: 80px; */
 }
 
 .greet_title {

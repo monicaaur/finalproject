@@ -63,41 +63,43 @@ const UpdatePost = () => {
   }
 
   return(
-    <div className='update_post_wrapper'>
-      <h2 className="update_post_text">Update Post</h2>
-      <Form className="input_caption" onSubmit={handleSubmit}>
-        <div className="pp_wrapper">
-          <Form.Label htmlFor="profilePictureUrl">Upload Photo</Form.Label>
+    <div className="updatepost_box">
+      <div className='update_post_wrapper'>
+        <h2 className="update_post_text">Update Post</h2>
+        <Form className="input_caption" onSubmit={handleSubmit}>
+          <div className="pp_wrapper">
+            <Form.Label htmlFor="profilePictureUrl">Upload Photo</Form.Label>
 
-          <div className="upload_wrapper">
-            <input
-              className="form-control file-upload upload_style"
-              type="file"
-              onChange={onImageUpload}
-              accept="image/*"
-              />
+            <div className="upload_wrapper">
+              <input
+                className="form-control file-upload upload_style"
+                type="file"
+                onChange={onImageUpload}
+                accept="image/*"
+                />
+            </div>
+
+            {/* Image Upload Preview */}
+            {imagePreview && <img className="preview" src={imagePreview} alt="preview" />}
           </div>
 
-          {/* Image Upload Preview */}
-          {imagePreview && <img className="preview" src={imagePreview} alt="preview" />}
-        </div>
+          <Form.Label htmlFor="caption" className='caption_title'>Caption</Form.Label>
+          <Form.Control
+            as="textarea"
+            rows={3}
+            id="caption"
+            name="caption"
+            type="text"
+            onChange={onCaptionPost}
+            value={caption}
+            placeholder="Write caption.."
+          />
 
-        <Form.Label htmlFor="caption" className='caption_title'>Caption</Form.Label>
-        <Form.Control
-          as="textarea"
-          rows={3}
-          id="caption"
-          name="caption"
-          type="text"
-          onChange={onCaptionPost}
-          value={caption}
-          placeholder="Write caption.."
-        />
-
-        <Button variant="link" type="submit" className="btn_update_post">
-          Update Post
-        </Button>
-      </Form>
+          <Button variant="link" type="submit" className="btn_update_post">
+            Update Post
+          </Button>
+        </Form>
+      </div>
     </div>
   )
 }

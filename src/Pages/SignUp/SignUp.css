@@ -1,8 +1,14 @@
+.signup_box {
+  height: 98vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .signup_wrapper {
   width: 800px;
   border-radius: 10px;
   padding: 25px 33px;
-  margin: 15px auto;
   box-shadow: 3px 3px 15px rgba(186, 186, 186, 0.75), -3px -3px 15px rgba(186, 186, 186, 0.75);
 }
 

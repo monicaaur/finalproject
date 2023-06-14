@@ -51,55 +51,57 @@ function SignIn() {
   });
 
   return (
-    <Container fluid className='signin_page'>
-      <h2 className="greet_title">Hi, welcome to <span className='kumo_title'>KumoKumo!</span> </h2>
+    <div className="signin_pagewrap">
+      <Container fluid className='signin_page'>
+        <h2 className="greet_title">Hi, welcome to <span className='kumo_title'>KumoKumo!</span> </h2>
 
-      <div className="signin_box">
-        <h2 className="signin_title">Sign In</h2>
-        <Form onSubmit={formik.handleSubmit}>
-          <div className="mb-2 label_style">
-            <Form.Label htmlFor="username">Email</Form.Label>
-            <Form.Control 
-              id="email"
-              name="email"
-              type="text"
-              onChange={formik.handleChange}
-              value={formik.values.email}
-              className="signin_form_style"
-              placeholder="Enter email"
-            />
-            {formik.touched.email && formik.errors.email ? (
-              <div style={{ color: '#e6283e'}}>{formik.errors.email}</div>
-            ) : null}
-          </div>
-          <div className="mb-2 mt-3 label_style">
-            <Form.Label htmlFor="password">Password</Form.Label>
-            <Form.Control 
-              id="password"
-              name="password"
-              type="password"
-              onChange={formik.handleChange}
-              value={formik.values.password}
-              className="signin_form_style"
-              placeholder="Enter password"
-            />
-            {formik.touched.password && formik.errors.password ? (
-              <div style={{ color: '#e6283e'}}>{formik.errors.password}</div>
-            ) : null}
-          </div>
-
-          <div className="btntext_wrapper">
-            <div className="btn_wrapper">
-              <Button type="submit" variant="success" className='btn_signin'>Sign In</Button>
+        <div className="signin_box">
+          <h2 className="signin_title">Sign In</h2>
+          <Form onSubmit={formik.handleSubmit}>
+            <div className="mb-2 label_style">
+              <Form.Label htmlFor="username">Email</Form.Label>
+              <Form.Control 
+                id="email"
+                name="email"
+                type="text"
+                onChange={formik.handleChange}
+                value={formik.values.email}
+                className="signin_form_style"
+                placeholder="Enter email"
+              />
+              {formik.touched.email && formik.errors.email ? (
+                <div style={{ color: '#e6283e'}}>{formik.errors.email}</div>
+              ) : null}
+            </div>
+            <div className="mb-2 mt-3 label_style">
+              <Form.Label htmlFor="password">Password</Form.Label>
+              <Form.Control 
+                id="password"
+                name="password"
+                type="password"
+                onChange={formik.handleChange}
+                value={formik.values.password}
+                className="signin_form_style"
+                placeholder="Enter password"
+              />
+              {formik.touched.password && formik.errors.password ? (
+                <div style={{ color: '#e6283e'}}>{formik.errors.password}</div>
+              ) : null}
             </div>
 
-            <div className='to_signup_text'>
-              <p>Don't have an account? <a href="/Signup" className='signup_link'>Sign up</a></p>
+            <div className="btntext_wrapper">
+              <div className="btn_wrapper">
+                <Button type="submit" variant="success" className='btn_signin'>Sign In</Button>
+              </div>
+
+              <div className='to_signup_text'>
+                <p>Don't have an account? <a href="/Signup" className='signup_link'>Sign up</a></p>
+              </div>
             </div>
-          </div>
-        </Form>
-      </div>
-    </Container>
+          </Form>
+        </div>
+      </Container>
+    </div>
   )
 }
 

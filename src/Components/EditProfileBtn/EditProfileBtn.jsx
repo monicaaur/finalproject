@@ -79,7 +79,7 @@ const EditProfileBtn = () => {
 
       <Modal show={show} onHide={handleClose} size='lg' aria-labelledby="contained-modal-title-vcenter" centered>
         <Modal.Header closeButton className='header_style'>
-          <Modal.Title>Update Profile</Modal.Title>
+          <Modal.Title>Edit Profile</Modal.Title>
         </Modal.Header>
         <Modal.Body className="edit_profile_wrap">
           <div>
