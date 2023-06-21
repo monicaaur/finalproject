@@ -98,7 +98,7 @@ const UserProfile = () => {
 
       <Container fluid className='profile_wrap'>
         <Row>
-          <Col lg='3'>
+          <Col lg='3' className="profile_test">
             <LeftSideMenu />
           </Col>
 

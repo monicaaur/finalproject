@@ -281,19 +281,32 @@
 }
 
 @media screen and (max-width: 768px) {
+  .profile_test {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   .photo_list {
     height: 210px;
   }
 }
 
 @media screen and (max-width: 425px) {
+  .profile_row_style{
+    margin-left: 0;
+    margin-right: 0;
+  }
+
   .profile_wrap {
-    width: 87%;
+    width: 100%;
     margin: 65px auto 0;
   }
 
   .profile_info_wrap {
     padding-bottom: 27px;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 90%;
   }
 
   .info_pp {
@@ -306,7 +319,7 @@
   }
 
   .profile_info_right {
-    margin-left: 27px;
+    margin-left: 0;
   }
 
   .profile_username {
@@ -336,6 +349,7 @@
 
   .photo_list_wrap {
     margin: 30px auto;
+    width: 93%;
   }
 
   .photo_list {
@@ -347,6 +361,14 @@
   .post_information {
     padding: 13px 0 9px 17px;
   }
+
+  .username_post {
+    width: 81%;
+  }
+
+  .profile_heart_icon {
+    right: 10px;
+  }
 }
 
 @media screen and (max-width: 375px) {
@@ -354,6 +376,10 @@
     font-size: 13px;
     margin-right: 10px;
     margin-bottom: 7px;
+  }
+
+  .profile_info_right {
+    margin-left: 20px;
   }
 
   .bio_info {
@@ -373,5 +399,9 @@
 @media screen and (max-width: 320px) {
   .profile_wrap {
     width: 100%;
+  }
+
+  .profile_info_right {
+    margin-left: 20px;
   }
 }

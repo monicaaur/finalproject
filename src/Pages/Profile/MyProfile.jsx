@@ -78,7 +78,7 @@ const MyProfile = () => {
       <Navibar />
 
       <Container fluid className='profile_wrap'>
-        <Row>
+        <Row className="profile_row_style">
           <Col lg='3'>
             <LeftSideMenu />
           </Col>
