@@ -5,7 +5,7 @@ import '../../index.css';
 import './EditProfileBtn.css';
 import '../UploadImg.css';
 
-const EditProfileBtn = () => {
+const EditProfileBtn = ({...userData}) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -92,7 +92,7 @@ const EditProfileBtn = () => {
                   name="name"
                   type="text"
                   onChange={(e) => setName(e.target.value)}
-                  value={name}
+                  defaultValue={userData.name}
                   className="myprofile_form_style"
                   placeholder="Enter name"
                 />
@@ -104,7 +104,7 @@ const EditProfileBtn = () => {
                   name="username"
                   type="text"
                   onChange={(e) => setUsername(e.target.value)}
-                  value={username}
+                  defaultValue={userData.username}
                   className="myprofile_form_style"
                   placeholder="Enter username"
                 />
@@ -119,7 +119,7 @@ const EditProfileBtn = () => {
                   name="email"
                   type="email"
                   onChange={(e) => setEmail(e.target.value)}
-                  value={email}
+                  defaultValue={userData.email}
                   className="myprofile_form_style"
                   placeholder="Enter email"
                 />
@@ -131,7 +131,7 @@ const EditProfileBtn = () => {
                   name="phoneNumber"
                   type="text"
                   onChange={(e) => setPhoneNumber(e.target.value)}
-                  value={phoneNumber}
+                  defaultValue={userData.phoneNumber}
                   className="myprofile_form_style"
                   placeholder="Enter phone number"
                 />
@@ -147,7 +147,7 @@ const EditProfileBtn = () => {
                 name="bio"
                 type="text"
                 onChange={(e) => setBio(e.target.value)}
-                value={bio}
+                defaultValue={userData.bio}
                 placeholder="Enter bio"
               />
             </div>
@@ -159,7 +159,7 @@ const EditProfileBtn = () => {
                 name="website"
                 type="text"
                 onChange={(e) => setWebsite(e.target.value)}
-                value={website}
+                defaultValue={userData.website}
                 placeholder="Enter website url"
               />
             </div>

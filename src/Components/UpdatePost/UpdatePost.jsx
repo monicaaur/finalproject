@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../../index.css';
 import './UpdatePost.css';
 import '../UploadImg.css';
@@ -13,6 +13,7 @@ const UpdatePost = () => {
   const [image, setImage] = useState("")
   const [imagePreview, setImagePreview] = useState(null)
   const [caption, setCaption] = useState('');
+  const [postCaption, setPostCaption] = useState('');
 
   const onImageUpload = (e) => {
     setImage(e.target.files[0]);
@@ -22,6 +23,25 @@ const UpdatePost = () => {
   const onCaptionPost = (e) => {
     setCaption(e.target.value);
   }
+
+  const handlePostCaption = async () => {
+    await Axios.get(`${import.meta.env.VITE_BASEURL}/api/v1/post/${postID}`, {
+      headers: {
+        apiKey: `${import.meta.env.VITE_APIKEY}`,
+        Authorization: `Bearer ${localStorage.getItem('token')}`
+      }
+    })
+    .then(async (response) => {
+      setPostCaption(response.data.data);
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+  }
+  
+  useEffect(() => {
+    handlePostCaption();
+  }, [])
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -91,6 +111,7 @@ const UpdatePost = () => {
             name="caption"
             type="text"
             onChange={onCaptionPost}
+            defaultValue={postCaption.caption}
             value={caption}
             placeholder="Write caption.."
           />

@@ -91,7 +91,7 @@ const MyProfile = () => {
                 <div className="info_pp">
                   <img src={userData.profilePictureUrl} alt="Profile Picture" />
                 </div>
-                <EditProfileBtn />
+                <EditProfileBtn {...userData}/>
               </div>
 
               <div className="profile_info_right">
