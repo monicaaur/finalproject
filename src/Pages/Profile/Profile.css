@@ -292,13 +292,18 @@
 }
 
 @media screen and (max-width: 425px) {
+  .padding_style{
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
   .profile_row_style{
     margin-left: 0;
     margin-right: 0;
   }
 
   .profile_wrap {
-    width: 100%;
+    width: 90%;
     margin: 65px auto 0;
   }
 

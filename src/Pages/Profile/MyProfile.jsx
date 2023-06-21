@@ -78,14 +78,14 @@ const MyProfile = () => {
       <Navibar />
 
       <Container fluid className='profile_wrap'>
-        <Row className="profile_row_style">
-          <Col lg='3'>
+        <Row>
+          <Col lg='3' className="padding_style">
             <LeftSideMenu />
           </Col>
 
           <Col lg='1'></Col>
 
-          <Col lg='7'>
+          <Col lg='7' className="padding_style">
             <div className="profile_info_wrap">
               <div className="profile_info_left">
                 <div className="info_pp">
