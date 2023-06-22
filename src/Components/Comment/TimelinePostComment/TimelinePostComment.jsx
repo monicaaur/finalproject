@@ -128,7 +128,7 @@ const TimelinePostComment = ({ postId }) => {
         </div>
       ) : (
         <div>
-          <p className='emptycontent_text'>no comments.</p>
+          <p className='emptycontent_text'>no comment.</p>
         </div>
       )}
 

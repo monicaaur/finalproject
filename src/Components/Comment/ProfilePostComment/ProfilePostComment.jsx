@@ -129,7 +129,7 @@ const ProfilePostComment = ({ postId }) => {
         </div>
       ) : (
         <div>
-          <p className='emptycomment_text'>no comments.</p>
+          <p className='emptycomment_text'>no comment.</p>
         </div>
       )}
 
