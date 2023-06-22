@@ -48,7 +48,7 @@ const CreatePost = () => {
         setUploadImage('');
         setCaption('');
         alert('Create post success')
-        window.location.reload();
+        window.location.assign("/myprofile");
       })
       .catch(error => {
         console.log(error);
