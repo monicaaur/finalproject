@@ -9,7 +9,6 @@ import { Button, Form } from 'react-bootstrap';
 const UpdatePost = () => {
   const { postID } = useParams();
 
-  const [uploadImage, setUploadImage] = useState('');
   const [image, setImage] = useState("")
   const [imagePreview, setImagePreview] = useState(null)
   const [caption, setCaption] = useState('');
@@ -56,8 +55,6 @@ const UpdatePost = () => {
       }
     })
     .then(async (response) => {
-      setUploadImage(response.data.url);
-      
       await Axios.post(`${import.meta.env.VITE_BASEURL}/api/v1/update-post/${postID}`, {
         imageUrl: response.data.url,
         caption: caption
@@ -68,8 +65,6 @@ const UpdatePost = () => {
         }
       })
       .then(() => {
-        setUploadImage('');
-        setCaption('');
         alert('Update post success')
         window.location.assign('/myprofile');
       })

@@ -6,7 +6,6 @@ import Axios from 'axios';
 import { Button, Form } from 'react-bootstrap';
 
 const CreatePost = () => {
-  const [uploadImage, setUploadImage] = useState('');
   const [image, setImage] = useState("")
   const [imagePreview, setImagePreview] = useState(null)
   const [caption, setCaption] = useState('');
@@ -33,8 +32,6 @@ const CreatePost = () => {
       }
     })
     .then(async (response) => {
-      setUploadImage(response.data.url);
-      
       await Axios.post(`${import.meta.env.VITE_BASEURL}/api/v1/create-post`, {
         imageUrl: response.data.url,
         caption: caption
@@ -45,8 +42,6 @@ const CreatePost = () => {
         }
       })
       .then(() => {
-        setUploadImage('');
-        setCaption('');
         alert('Create post success')
         window.location.assign("/myprofile");
       })

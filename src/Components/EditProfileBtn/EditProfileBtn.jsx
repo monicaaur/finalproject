@@ -11,8 +11,6 @@ const EditProfileBtn = ({...userData}) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const [uploadImage, setUploadImage] = useState("");
-
   const [image, setImage] = useState("")
   const [imagePreview, setImagePreview] = useState(null)
 
@@ -42,8 +40,6 @@ const EditProfileBtn = ({...userData}) => {
       }
     })
     .then(async (response) => {
-      setUploadImage(response.data.url);
-
       await Axios.post(`${import.meta.env.VITE_BASEURL}/api/v1/update-profile`, {
         name: name,
         username: username,
