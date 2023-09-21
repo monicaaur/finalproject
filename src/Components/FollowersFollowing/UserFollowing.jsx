@@ -51,7 +51,7 @@ const UserFollowing = ({totalFollowing, username}) => {
               }}
             >
               {dataFollowing && dataFollowing.map(following => (
-                <div className="followers_list_wrap">
+                <div className="followers_list_wrap" key={following.id}>
                   <div className="account_wrap">
                     <div className="followers_pp_wrap">
                       <img src={following.profilePictureUrl} alt="" />

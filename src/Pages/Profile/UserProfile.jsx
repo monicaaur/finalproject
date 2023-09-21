@@ -129,7 +129,7 @@ const UserProfile = () => {
                 <>
                   {postImage && postImage.map(image => (
                     <>
-                    <div className="photo_list" onClick={() => handleShow(image.id)}>
+                    <div className="photo_list" onClick={() => handleShow(image.id)} key={image.id}>
                       <img src={image.imageUrl} alt="" />
                     </div>
 

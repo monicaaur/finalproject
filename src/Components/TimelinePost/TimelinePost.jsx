@@ -103,7 +103,7 @@ const TimelinePost = (props) => {
       <div>
         {postData && postData.map(posts => (
           <>
-            <div className="post_wrapper">
+            <div className="post_wrapper" key={posts.id}>
               <div className="user_wrapper">
                 <div className="photo_profile">
                   <img src={posts.user?.profilePictureUrl} alt="" />

@@ -105,7 +105,7 @@ const ProfilePostComment = ({ postId }) => {
         >
           {postComment.map(comments => (
             <>
-            <div className="comment_box">
+            <div className="comment_box" key={comments.id}>
               <div className="user_comment_wrap">
                 <div className="user_pp">
                   <img src={comments.user.profilePictureUrl} alt="profile picture" />

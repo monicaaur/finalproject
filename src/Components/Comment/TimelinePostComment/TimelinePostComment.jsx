@@ -105,7 +105,7 @@ const TimelinePostComment = ({ postId }) => {
           {postComment.map(comments => (
             <>
             <div className="comment_box">
-              <div className="comment_wrap">
+              <div className="comment_wrap" key={comments.id}>
                 <div className="comment_pp_wrap">
                   <img src={comments.user.profilePictureUrl} alt="profile picture" className="comment_pp" />
                 </div>
