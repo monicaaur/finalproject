@@ -63,7 +63,7 @@ function SignIn() {
               <Form.Control 
                 id="email"
                 name="email"
-                type="text"
+                type="email"
                 onChange={formik.handleChange}
                 value={formik.values.email}
                 className="signin_form_style"
